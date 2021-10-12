@@ -5,7 +5,7 @@
       "text": "Brush My Teeth",
       "icon": "🦷",
       "step": 1,
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 2,

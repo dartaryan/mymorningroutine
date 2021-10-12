@@ -1,7 +1,12 @@
-<div class="task">
-   
-    <h3>{{task.icon}}  {{task.text}}  <fa-icon [ngStyle] = "{color:'darkred'}" [icon]="faTimes"></fa-icon></h3>
-    <p>{{task.step}}</p>
-    
-    
+<div [ngClass]="{ reminder: task.reminder }" class="task"
+(dblclick)="onToggle(task)">
+  <h3>
+    {{ task.icon }} {{ task.text }}
+    <fa-icon
+      (click)="onDelete(task)"
+      [ngStyle]="{ color: 'darkred' }"
+      [icon]="faTimes"
+    ></fa-icon>
+  </h3>
+  <p>{{ task.step }}</p>
 </div>
