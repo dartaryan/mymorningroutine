@@ -1,7 +1,7 @@
 export interface Task {
   id?: number;
   text: string;
-  logo: string;
+  icon: string;
   step: number;
   reminder: boolean;
 }
