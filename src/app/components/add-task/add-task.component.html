@@ -1,4 +1,4 @@
-<form class="add-form" (ngSubmit)="onSubmit()">
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
   <div class="form-control">
     <label for="text">Task</label>
     <input
@@ -13,7 +13,7 @@
   <div class="form-control">
     <label for="icon">Icon</label>
     <input
-      type="text"
+      type="char"
       name="icon"
       [(ngModel)]="icon"
       id="icon"
@@ -34,17 +34,7 @@
         placeholder="Choose Step Number"
       />
     </div>
-
-    <div class="form-control form-control-check">
-      <label for="reminder">Set Reminder</label>
-      <input
-        type="checkbox"
-        name="reminder"
-        [(ngModel)]="reminder"
-        id="reminder"
-      />
-    </div>
   </div>
-{{icon}}
+
   <input type="submit" value="Save Task" class="btn btn-block" />
 </form>

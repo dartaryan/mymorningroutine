@@ -1,23 +1,24 @@
 .task {
-  background: #f4f4f4;
+  background: rgba(255, 255, 255, 0.651);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .task:hover{
-  background-color: #dad6d6;
+  background: rgba(255, 255, 255, 0.329);
   transition: 0.2s ease-in-out;
 }
 
-.task.reminder {
+.task.done {
   
   border-left: 5px solid green;
-  background-color: rgba(0, 128, 0, 0.2);
+  background-color: rgba(44, 131, 44, 0.349);
   
 }
-.task.reminder:hover {
+.task.done:hover {
   border-left: 5px solid green;
-  background-color: rgba(0, 128, 0, 0.5);
+  background-color: rgba(25, 128, 25, 0.342);
   transition: 0.5s ease-in-out;
 }
 

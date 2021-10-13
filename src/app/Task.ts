@@ -3,5 +3,5 @@ export interface Task {
   text: string;
   icon: string;
   step: number;
-  reminder: boolean;
+  done: boolean;
 }
