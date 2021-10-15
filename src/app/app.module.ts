@@ -13,8 +13,12 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
 import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
 
-const appRoutes: Routes = [{ path: '', component: TasksComponent }];
+const appRoutes: Routes = [
+  { path: '', component: TasksComponent },
+  { path: 'about', component: AboutComponent }
+];
 
 @NgModule({
   declarations: [
@@ -25,6 +29,7 @@ const appRoutes: Routes = [{ path: '', component: TasksComponent }];
     TaskItemComponent,
     AddTaskComponent,
     AboutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
