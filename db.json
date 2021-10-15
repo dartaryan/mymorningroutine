@@ -6,7 +6,7 @@
       "icon": "🦷",
       "step": 1,
       "": false,
-      "done": true
+      "done": false
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "icon": "☕",
       "step": 2,
       "": false,
-      "done": true
+      "done": false
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "icon": "🍽",
       "step": 3,
       "": false,
-      "done": true
+      "done": false
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "icon": "🍱",
       "step": 4,
       "": false,
-      "done": true
+      "done": false
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "icon": "🎒",
       "step": 5,
       "": false,
-      "done": true
+      "done": false
     },
     {
       "id": 6,
@@ -47,6 +47,13 @@
       "step": 6,
       "": false,
       "done": false
+    },
+    {
+      "text": "shower",
+      "icon": "🚿",
+      "done": false,
+      "step": 7,
+      "id": 7
     }
   ]
 }

@@ -1,5 +1,16 @@
 <form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
   <div class="form-control">
+    <label for="step">Step</label>
+    <input
+      type="number"
+      name="step"
+      [(ngModel)]="step"
+      id="step"
+      placeholder="Choose Step Number"
+    />
+  </div>
+
+  <div class="form-control">
     <label for="text">Task</label>
     <input
       type="text"
@@ -23,17 +34,6 @@
       [emojiPickerDirection]="'bottom' || 'top' || 'left' || 'right'"
       (emojiPickerSelect)="handleSelection($event)"
     />
-
-    <div class="form-control">
-      <label for="step">Step</label>
-      <input
-        type="number"
-        name="step"
-        [(ngModel)]="step"
-        id="step"
-        placeholder="Choose Step Number"
-      />
-    </div>
   </div>
 
   <input type="submit" value="Save Task" class="btn btn-block" />

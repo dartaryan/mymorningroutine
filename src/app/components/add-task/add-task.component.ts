@@ -16,6 +16,7 @@ export class AddTaskComponent implements OnInit {
   step: number = 1;
   showAddTask: boolean = false;
   subscription: Subscription;
+  toggled: boolean = false;
 
   constructor(private uiService: UiService) {
     this.subscription = this.uiService
@@ -25,15 +26,11 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // toggled: boolean = false;
-  // handleSelection(event: { char: any }) {
-  //   this.icon =  event.char
-  // }
 
-  toggled: boolean = false;
-  handleSelection($event: { char: string; }) {
-  this.icon += $event.char;
-}
+  handleSelection($event: { char: string }) {
+    this.icon = $event.char;
+    return;
+  }
 
   onSubmit() {
     if (!this.text) {
@@ -46,7 +43,6 @@ export class AddTaskComponent implements OnInit {
       done: this.done,
       step: this.step,
     };
-
     this.onAddTask.emit(newTask);
 
     this.text = '';
