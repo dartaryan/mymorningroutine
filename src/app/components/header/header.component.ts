@@ -10,7 +10,7 @@ import { UiService } from 'src/app/services/ui.service';
 export class HeaderComponent implements OnInit {
   title: string = 'My Morning Routine';
   showAddTask: boolean = false;
-  subscription: Subscription | undefined;
+  subscription: Subscription;
 
   constructor(private uiService: UiService) {
     this.subscription = this.uiService
