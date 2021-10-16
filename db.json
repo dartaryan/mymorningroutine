@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Brush My Teeth",
-      "icon": "🦷",
-      "step": 1,
-      "": false,
-      "done": false
-    },
-    {
       "id": 2,
       "text": "Drink Coffee",
       "icon": "☕",
@@ -56,11 +48,25 @@
       "id": 7
     },
     {
-      "text": "בי 197",
-      "icon": "☀️",
+      "text": "Go to school",
+      "icon": "😊",
       "done": false,
-      "step": 4,
+      "step": 9,
+      "id": 8
+    },
+    {
+      "text": "wake up",
+      "icon": "🍒",
+      "done": false,
+      "step": 1,
       "id": 9
+    },
+    {
+      "text": "Clean the house",
+      "icon": "👽",
+      "done": false,
+      "step": 5,
+      "id": 10
     }
   ]
 }

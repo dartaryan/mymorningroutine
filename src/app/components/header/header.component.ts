@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'My Morning Routine';
-  showAddTask: boolean = true;
+  showAddTask: boolean = false;
   subscription: Subscription;
 
   constructor(private uiService: UiService, private router: Router) {

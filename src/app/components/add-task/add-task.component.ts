@@ -14,7 +14,7 @@ export class AddTaskComponent implements OnInit {
   icon: any = '☀️';
   done: boolean = false;
   step: any;
-  showAddTask: boolean = true;
+  showAddTask: boolean = false;
   subscription: Subscription;
   toggled: boolean = false;
   @Input() emoj: EventEmitter<any> = new EventEmitter();
