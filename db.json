@@ -14,7 +14,7 @@
       "icon": "☕",
       "step": 2,
       "": false,
-      "done": false
+      "done": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "icon": "🍽",
       "step": 3,
       "": false,
-      "done": false
+      "done": true
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "icon": "🍱",
       "step": 4,
       "": false,
-      "done": false
+      "done": true
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "icon": "🎒",
       "step": 5,
       "": false,
-      "done": false
+      "done": true
     },
     {
       "id": 6,
@@ -54,6 +54,34 @@
       "done": false,
       "step": 7,
       "id": 7
+    },
+    {
+      "text": "Readon's drug lab",
+      "icon": "😄",
+      "done": false,
+      "step": 1,
+      "id": 8
+    },
+    {
+      "text": "Readon's drug lab",
+      "icon": "😇",
+      "done": false,
+      "step": 3,
+      "id": 9
+    },
+    {
+      "text": "Readon's drug lab",
+      "icon": "",
+      "done": false,
+      "step": 1,
+      "id": 10
+    },
+    {
+      "text": "Readon's drug lab",
+      "icon": "☀️",
+      "done": false,
+      "step": 7,
+      "id": 11
     }
   ]
 }

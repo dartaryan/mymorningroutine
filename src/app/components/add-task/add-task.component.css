@@ -1,3 +1,30 @@
-.add-form{
-    margin-bottom: 40px;
+.add-form {
+  margin-bottom: 40px;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-emoji {
+  font-size: 120px;
+  /* background: rgba(255, 255, 255, 0.651); */
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.651);
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+.current-emoji:hover {
+  /* background: rgba(255, 255, 255, 0.329); */
+  transform: scale(1.1) rotate(10deg);
+}
+

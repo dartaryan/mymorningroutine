@@ -4,6 +4,11 @@
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 .task:hover{
   background: rgba(255, 255, 255, 0.329);

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
 import { Task } from '../../Task';
@@ -10,13 +10,14 @@ import { Task } from '../../Task';
 })
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
-  text: string = 'New Task';
-  icon: string = '😃';
+  text: string = '';
+  icon: any = '☀️';
   done: boolean = false;
-  step: number = 1;
-  showAddTask: boolean = false;
+  step: any;
+  showAddTask: boolean = true;
   subscription: Subscription;
   toggled: boolean = false;
+  @Input() emoj: EventEmitter<any> = new EventEmitter();
 
   constructor(private uiService: UiService) {
     this.subscription = this.uiService
@@ -27,10 +28,11 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
 
 
-  handleSelection($event: { char: string }) {
-    this.icon = $event.char;
-    return;
+  handleSelection(emoj: { char: string }) {
+    this.icon = emoj.char;
+    this.toggled = !this.toggled
   }
+
 
   onSubmit() {
     if (!this.text) {
@@ -46,7 +48,7 @@ export class AddTaskComponent implements OnInit {
     this.onAddTask.emit(newTask);
 
     this.text = '';
-    this.icon = '';
+    this.icon = '☀️';
     this.done = false;
     this.step = 1;
   }
