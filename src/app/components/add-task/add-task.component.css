@@ -1,20 +1,21 @@
-.add-form {
-  margin-bottom: 40px;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .current-emoji {
-  font-size: 120px;
-  /* background: rgba(255, 255, 255, 0.651); */
+  font-size: 110px;
   cursor: pointer;
   border-radius: 5px;
   border: none;
   transition: all 0.2s ease-in-out;
+}
+
+.current-emoji:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .form-input {
@@ -22,9 +23,40 @@
   cursor: pointer;
   border-radius: 5px;
   border: none;
-}
-.current-emoji:hover {
-  /* background: rgba(255, 255, 255, 0.329); */
-  transform: scale(1.1) rotate(10deg);
+  text-align: center;
 }
 
+.form-rows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add-form {
+    margin-bottom:14px;
+    justify-content: space-between;
+}
+
+#text {
+  width: 100%;
+  height: 50px;
+}
+
+#step {
+  width: 100%;
+  height: 50px;
+}
+
+.column {
+  float: right;
+
+}
+
+.left {
+  width: 20%;
+}
+
+.right {
+  width: 74%;
+}
