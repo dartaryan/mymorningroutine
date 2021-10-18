@@ -100,6 +100,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/angular-crash",
+            "netlifyToken": "",
+            "siteId": "78c87e8d-b10b-4aed-bc9a-8acb3f0607d1"
+          }
         }
       }
     }
