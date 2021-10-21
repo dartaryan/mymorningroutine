@@ -15,9 +15,19 @@ import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angularx-social-login';
+import { UserComponent } from './components/user/user.component';
+
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
@@ -30,6 +40,7 @@ const appRoutes: Routes = [
     AddTaskComponent,
     AboutComponent,
     FooterComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +49,29 @@ const appRoutes: Routes = [
     NgxEmojiPickerModule.forRoot(),
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    SocialLoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('clientId'),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId'),
+          },
+        ],
+        onError: (err) => {
+          console.error(err);
+        },
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
