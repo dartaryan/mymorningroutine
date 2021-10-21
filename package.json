@@ -15,7 +15,6 @@
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
-    "@angular/fire": "^7.1.1",
     "@angular/forms": "~12.2.0",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
@@ -26,15 +25,17 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "angularx-social-login": "^4.0.1",
 =======
 >>>>>>> 94d35ff79c9e287768a224e37c71767fddcaf2d4
     "firebase": "^9.1.3",
+=======
+>>>>>>> parent of 94d35ff (recreate google oauth)
     "if-emoji": "^0.1.0",
     "json-server": "^0.17.0",
     "ngx-emoj": "^0.0.7",
     "ngx-emoji-picker": "^0.1.6",
-    "rxfire": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "twemoji": "^13.1.0",

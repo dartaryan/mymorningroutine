@@ -102,13 +102,11 @@
           }
         },
         "deploy": {
-          "builder": "@angular/fire:deploy",
+          "builder": "@netlify-builder/deploy:deploy",
           "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "angular-crash:build:production",
-            "firebaseProject": "my-morning-routine-f6e2a",
-            "firebaseHostingSite": "morningroutines"
+            "outputPath": "dist/angular-crash",
+            "netlifyToken": "",
+            "siteId": "78c87e8d-b10b-4aed-bc9a-8acb3f0607d1"
           }
         }
       }
