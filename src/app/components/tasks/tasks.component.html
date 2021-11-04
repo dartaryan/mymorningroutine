@@ -1,9 +1,8 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
-<ng-container *ngIf="tasks$ |async as tasks">
-
+<ng-container *ngIf="tasks$ | async as tasks">
   <app-task-item
-    *ngFor="let task of tasks"
+    *ngFor="let task of tasks | orderBy"
     [task]="task"
     (onDeleteTask)="deleteTask(task)"
     (onToggledone)="toggledone(task)"

@@ -24,11 +24,12 @@ import {
   FacebookLoginProvider,
 } from 'angularx-social-login';
 import { UserComponent } from './components/user/user.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
@@ -46,7 +47,9 @@ const appRoutes: Routes = [
     AboutComponent,
     FooterComponent,
     UserComponent,
+    OrderByPipe,
   ],
+  
   imports: [
     BrowserModule,
     FontAwesomeModule,
@@ -82,5 +85,6 @@ const appRoutes: Routes = [
     },
   ],
   bootstrap: [AppComponent],
+  exports: [OrderByPipe]
 })
 export class AppModule {}

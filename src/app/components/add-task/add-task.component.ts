@@ -44,6 +44,7 @@ export class AddTaskComponent implements OnInit {
       icon: this.icon,
       done: this.done,
       step: this.step,
+      id: "",
     };
     this.onAddTask.emit(newTask);
 
