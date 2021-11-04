@@ -2,7 +2,6 @@
   <div class="current-icon">
     <h3
       class="current-emoji"
-      *ngIf="showAddTask"
       (click)="toggled = !toggled"
       [(emojiPickerIf)]="toggled"
       [emojiPickerDirection]="'bottom' || 'top' || 'left' || 'right'"
@@ -12,7 +11,7 @@
     </h3>
   </div>
   <div class="form-fields">
-    <form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+    <form class="add-form" (ngSubmit)="onSubmit()">
       <div class="form-rows">
         <div class="form-control column left">
           <input

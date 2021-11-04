@@ -9,14 +9,6 @@
       "done": false
     },
     {
-      "id": 3,
-      "text": "Do The Dishes",
-      "icon": "🍽",
-      "step": 3,
-      "": false,
-      "done": false
-    },
-    {
       "id": 4,
       "text": "Pack My Food",
       "icon": "🍱",
@@ -33,33 +25,74 @@
       "done": false
     },
     {
-      "id": 6,
-      "text": "Get Ready To The Gym",
-      "icon": "👟",
-      "step": 6,
-      "": false,
-      "done": false
-    },
-    {
-      "text": "shower",
-      "icon": "🚿",
-      "done": false,
-      "step": 7,
-      "id": 7
-    },
-    {
-      "text": "Go to school",
-      "icon": "😊",
-      "done": false,
-      "step": 9,
-      "id": 8
-    },
-    {
       "text": "Clean the house",
       "icon": "👽",
       "done": false,
       "step": 5,
       "id": 10
+    },
+    {
+      "text": "Brush my teeth",
+      "icon": "🙂",
+      "done": false,
+      "step": 1,
+      "id": 11
+    },
+    {
+      "text": "laundry",
+      "icon": "😬",
+      "done": false,
+      "step": 3,
+      "id": 12
+    },
+    {
+      "text": "cdscsdcs",
+      "icon": "☀️",
+      "done": false,
+      "step": 4,
+      "id": 13
+    },
+    {
+      "text": "cdscds",
+      "icon": "☀️",
+      "done": false,
+      "step": 8,
+      "id": 14
+    },
+    {
+      "text": "cdscsdcsdcsd",
+      "icon": "☀️",
+      "done": false,
+      "step": 7,
+      "id": 15
+    },
+    {
+      "text": "bhbhbbhgf",
+      "icon": "☀️",
+      "done": false,
+      "step": 2,
+      "id": 16
+    },
+    {
+      "text": "vdfvdfvfd",
+      "icon": "☀️",
+      "done": false,
+      "step": 4,
+      "id": 17
+    },
+    {
+      "text": "csdcdcs",
+      "icon": "☀️",
+      "done": false,
+      "step": 3,
+      "id": 18
+    },
+    {
+      "text": "csdcdscds",
+      "icon": "☀️",
+      "done": false,
+      "step": 6,
+      "id": 19
     }
   ]
 }
