@@ -13,11 +13,10 @@ export class AddTaskComponent implements OnInit {
   text: string = '';
   icon: any = '☀️';
   done: boolean = false;
-  step: any;
+  step: number = 1;
   showAddTask: boolean = false;
   subscription: Subscription;
   toggled: boolean = false;
-  @Input() emoj: EventEmitter<any> = new EventEmitter();
 
   constructor(private uiService: UiService) {
     this.subscription = this.uiService
@@ -27,12 +26,15 @@ export class AddTaskComponent implements OnInit {
 
   ngOnInit(): void {}
 
-
   handleSelection(emoj: { char: string }) {
     this.icon = emoj.char;
-    this.toggled = !this.toggled
+    this.toggled = !this.toggled;
   }
 
+  onChosenEmoj(emoj: any ) {
+    this.icon = emoj;
+    console.log('emoj: ', emoj);
+  }
 
   onSubmit() {
     if (!this.text) {
@@ -44,7 +46,7 @@ export class AddTaskComponent implements OnInit {
       icon: this.icon,
       done: this.done,
       step: this.step,
-      id: "",
+      id: '',
     };
     this.onAddTask.emit(newTask);
 

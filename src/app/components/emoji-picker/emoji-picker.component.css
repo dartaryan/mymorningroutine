@@ -1,0 +1,12 @@
+.emoji-btn {
+  font-size: 110px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.1) rotate(10deg);
+}

@@ -30,7 +30,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { OrderByPipe } from './pipes/order-by.pipe';
-
+import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.component';
+import { NgxEmojModule } from 'ngx-emoj';
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
   { path: 'about', component: AboutComponent },
@@ -48,8 +49,9 @@ const appRoutes: Routes = [
     FooterComponent,
     UserComponent,
     OrderByPipe,
+    EmojiPickerComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     FontAwesomeModule,
@@ -62,6 +64,7 @@ const appRoutes: Routes = [
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+    NgxEmojModule,
   ],
   providers: [
     {
@@ -85,6 +88,6 @@ const appRoutes: Routes = [
     },
   ],
   bootstrap: [AppComponent],
-  exports: [OrderByPipe]
+  exports: [OrderByPipe],
 })
 export class AppModule {}

@@ -28,7 +28,7 @@ export class TasksComponent implements OnInit {
   constructor(private taskService: TaskService, private firestore: Firestore) {}
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+    // this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
 
   async deleteTask(task: Task) {
@@ -41,7 +41,7 @@ export class TasksComponent implements OnInit {
       done: doneState,
     });
 
-    this.taskService.updateTaskdone(task).subscribe();
+    // this.taskService.updateTaskdone(task).subscribe();
   }
 
   async addTask(task: Task) {

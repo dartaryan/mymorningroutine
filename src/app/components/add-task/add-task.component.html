@@ -1,14 +1,6 @@
 <div class="row" *ngIf="showAddTask">
   <div class="current-icon">
-    <h3
-      class="current-emoji"
-      (click)="toggled = !toggled"
-      [(emojiPickerIf)]="toggled"
-      [emojiPickerDirection]="'bottom' || 'top' || 'left' || 'right'"
-      (emojiPickerSelect)="handleSelection($event)"
-    >
-      {{ icon !== "" ? icon : "☀️" }}
-    </h3>
+    <app-emoji-picker (chosenEmoj)="onChosenEmoj($event)"></app-emoji-picker>
   </div>
   <div class="form-fields">
     <form class="add-form" (ngSubmit)="onSubmit()">
