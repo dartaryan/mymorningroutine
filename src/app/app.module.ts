@@ -32,6 +32,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.component';
 import { NgxEmojModule } from 'ngx-emoj';
+import { LoginComponent } from './pages/login/login.component';
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
   { path: 'about', component: AboutComponent },
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     UserComponent,
     OrderByPipe,
     EmojiPickerComponent,
+    LoginComponent,
   ],
 
   imports: [
