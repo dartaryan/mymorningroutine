@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/Task';
-import { TaskService } from 'src/app/services/task.service';
 import { map } from 'rxjs/operators';
 import {
   addDoc,
@@ -25,11 +24,9 @@ export class TasksComponent implements OnInit {
     map((tasks) => tasks as Task[])
   );
 
-  constructor(private taskService: TaskService, private firestore: Firestore) {}
+  constructor(private firestore: Firestore) {}
 
-  ngOnInit(): void {
-    // this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
-  }
+  ngOnInit(): void {}
 
   async deleteTask(task: Task) {
     await deleteDoc(doc(this.firestore, 'tasks', task.id));
@@ -40,8 +37,6 @@ export class TasksComponent implements OnInit {
     await updateDoc(doc(this.firestore, 'tasks', task.id), {
       done: doneState,
     });
-
-    // this.taskService.updateTaskdone(task).subscribe();
   }
 
   async addTask(task: Task) {

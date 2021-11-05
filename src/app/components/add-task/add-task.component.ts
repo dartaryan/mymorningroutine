@@ -33,7 +33,6 @@ export class AddTaskComponent implements OnInit {
 
   onChosenEmoj(emoj: any ) {
     this.icon = emoj;
-    console.log('emoj: ', emoj);
   }
 
   onSubmit() {

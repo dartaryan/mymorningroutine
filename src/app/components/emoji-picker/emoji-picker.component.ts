@@ -17,7 +17,6 @@ export class EmojiPickerComponent implements OnInit {
   handleEmoji(e: { char: string }) {
     this.icon = e.char;
     this.toggled = !this.toggled;
-    const sendEmoj = this.icon;
     this.chosenEmoj.emit(this.icon);
   }
 
