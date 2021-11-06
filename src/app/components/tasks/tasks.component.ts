@@ -11,6 +11,8 @@ import {
   setDoc,
   updateDoc,
 } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/User';
 
 @Component({
   selector: 'app-tasks',
@@ -24,7 +26,7 @@ export class TasksComponent implements OnInit {
     map((tasks) => tasks as Task[])
   );
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore, public authService: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -41,7 +43,13 @@ export class TasksComponent implements OnInit {
 
   async addTask(task: Task) {
     await addDoc(collection(this.firestore, 'tasks'), task)
-      .then((docRef) => setDoc(docRef, { id: docRef.id }, { merge: true }))
+      .then((docRef) =>
+        setDoc(
+          docRef,
+          { id: docRef.id },
+          { merge: true }
+        )
+      )
       .catch((error) => console.error('Error adding document: ', error));
   }
 }

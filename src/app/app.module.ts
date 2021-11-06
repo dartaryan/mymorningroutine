@@ -30,6 +30,9 @@ import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './services/auth.service';
+import { AppRoutingModule } from './app-routing.module';
+import { UserTasksPipe } from './pipes/user-tasks.pipe';
+import { LoginSunComponent } from './component/login-sun/login-sun.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -53,6 +56,8 @@ const appRoutes: Routes = [
     EmojiPickerComponent,
     LoginComponent,
     LoginButtonComponent,
+    UserTasksPipe,
+    LoginSunComponent,
   ],
 
   imports: [
@@ -70,9 +75,10 @@ const appRoutes: Routes = [
     NgxEmojModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,
+    AppRoutingModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
-  exports: [OrderByPipe],
+  exports: [OrderByPipe,UserTasksPipe],
 })
 export class AppModule {}

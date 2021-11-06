@@ -17,6 +17,7 @@ import { addDoc, collection, Firestore, setDoc } from '@angular/fire/firestore';
 })
 export class AuthService {
   userData: any;
+  static userData: any;
   constructor(
     public fireAuth: Auth,
     public firestore: Firestore,
@@ -61,14 +62,16 @@ export class AuthService {
     }
   }
 
+  getUserData() {}
+
   async SetUserData(user: User) {
-    const userData = {
+    this.userData = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
     };
-    await addDoc(collection(this.firestore, 'users'), user.uid.toString)
+    await addDoc(collection(this.firestore, 'users'), this.userData)
       .then((docRef) => setDoc(docRef, { merge: true }))
       .catch((error) => console.error('Error adding document: ', error));
   }
@@ -77,6 +80,6 @@ export class AuthService {
   async SignOut() {
     await this.fireAuth.signOut();
     localStorage.removeItem('user');
-    this.router.navigate(['sign-in']);
+    this.router.navigate(['login']);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 import { UiService } from 'src/app/services/ui.service';
 import { Task } from '../../Task';
 
@@ -18,7 +19,7 @@ export class AddTaskComponent implements OnInit {
   subscription: Subscription;
   toggled: boolean = false;
 
-  constructor(private uiService: UiService) {
+  constructor(private uiService: UiService,public authService: AuthService) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
@@ -46,6 +47,7 @@ export class AddTaskComponent implements OnInit {
       done: this.done,
       step: this.step,
       id: '',
+      uid: this.authService.userData.uid
     };
     this.onAddTask.emit(newTask);
 

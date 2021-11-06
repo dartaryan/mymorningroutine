@@ -4,4 +4,5 @@ export interface Task {
   icon: string;
   step: number;
   done: boolean;
+  uid: string;
 }
