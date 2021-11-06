@@ -25,7 +25,7 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.component';
 import { NgxEmojModule } from 'ngx-emoj';
 import { LoginComponent } from './pages/login/login.component';
-import { LoginButtonComponent } from './components/login-button/login-button.component';
+
 import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -34,6 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserTasksPipe } from './pipes/user-tasks.pipe';
 import { LoginSunComponent } from './decorations/login-sun/login-sun.component';
 import { LoginGreetingComponent } from './decorations/login-greeting/login-greeting.component';
+import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
+import { FlyingSquaresComponent } from './decorations/flying-squares/flying-squares.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -56,10 +58,11 @@ const appRoutes: Routes = [
     OrderByPipe,
     EmojiPickerComponent,
     LoginComponent,
-    LoginButtonComponent,
     UserTasksPipe,
     LoginSunComponent,
     LoginGreetingComponent,
+    LogoutButtonComponent,
+    FlyingSquaresComponent,
   ],
 
   imports: [
@@ -81,6 +84,6 @@ const appRoutes: Routes = [
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
-  exports: [OrderByPipe,UserTasksPipe],
+  exports: [OrderByPipe, UserTasksPipe],
 })
 export class AppModule {}

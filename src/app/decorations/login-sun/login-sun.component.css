@@ -3,14 +3,11 @@
   overflow: hidden;
 }
 
-/* body {
-    margin: 0;
+body {
     padding: 1rem;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, deepSkyBlue 20%, lightSteelBlue);
     background-attachment: fixed;
   }
-   */
+  
 .sun {
   width: 20rem;
   height: 20rem;
@@ -21,6 +18,11 @@
   -webkit-mask-image: radial-gradient(black 40%, transparent 65%);
   mask-image: radial-gradient(black 40%, transparent 65%);
   border-radius: 50%;
+
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 .sun::after,
 .sun::before {
