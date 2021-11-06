@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
-import { TasksComponent } from './components/tasks/tasks.component';
+import { TasksComponent } from './pages/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
@@ -32,7 +32,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './services/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { UserTasksPipe } from './pipes/user-tasks.pipe';
-import { LoginSunComponent } from './component/login-sun/login-sun.component';
+import { LoginSunComponent } from './decorations/login-sun/login-sun.component';
+import { LoginGreetingComponent } from './decorations/login-greeting/login-greeting.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
     LoginButtonComponent,
     UserTasksPipe,
     LoginSunComponent,
+    LoginGreetingComponent,
   ],
 
   imports: [

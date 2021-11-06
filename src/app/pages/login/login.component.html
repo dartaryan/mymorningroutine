@@ -1,5 +1,11 @@
- <div class="login-content">
-  <cool-google-button color="light" (click)="authService.GoogleAuth()"> Login with Google </cool-google-button>
-
+<div class="container">
+  <div class="sun"><app-login-sun></app-login-sun></div>
+  <div class="greeting"><app-login-greeting></app-login-greeting></div>
+  <div class="google-login">
+    <cool-google-button color="light" (click)="authService.GoogleAuth()">
+      Login with Google
+    </cool-google-button>
+  </div>
+  <div class="facebook-login"></div>
+  <div class="apple-login"></div>
 </div>
- 
