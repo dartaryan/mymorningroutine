@@ -14,15 +14,7 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
 import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
-
-import {
-  SocialLoginModule,
-  SocialAuthServiceConfig,
-} from 'angularx-social-login';
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider,
-} from 'angularx-social-login';
+import { SocialLoginModule } from 'angularx-social-login';
 import { UserComponent } from './components/user/user.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -37,10 +29,12 @@ import { LoginButtonComponent } from './components/login-button/login-button.com
 import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AuthService } from './services/auth.service';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: '', component: TasksComponent },
+  { path: 'tasks', component: TasksComponent },
   { path: 'about', component: AboutComponent },
 ];
 
@@ -70,7 +64,6 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     SocialLoginModule,
-
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
@@ -78,7 +71,7 @@ const appRoutes: Routes = [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,
   ],
-
+  providers: [AuthService],
   bootstrap: [AppComponent],
   exports: [OrderByPipe],
 })

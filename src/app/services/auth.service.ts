@@ -1,51 +1,82 @@
-import { Injectable } from '@angular/core';
-import { GoogleAuthProvider,Auth,signInWithPopup } from '@angular/fire/auth';
+import { Injectable, NgZone } from '@angular/core';
+import {
+  GoogleAuthProvider,
+  Auth,
+  signInWithPopup,
+  authState,
+} from '@angular/fire/auth';
 import firebase from 'firebase/compat/app';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import 'firebase/auth';
+import { User } from '../User';
+import { Router } from '@angular/router';
+import { addDoc, collection, Firestore, setDoc } from '@angular/fire/firestore';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private fireAuth: Auth) {}
-
-  async loginWithGoogle() {
-    console.log('object');
-    await 
-      signInWithPopup(this.fireAuth,new GoogleAuthProvider())
-      .then((result) => {
-        console.log(result);
-      }).catch(error => {console.log(error)});
+  userData: any;
+  constructor(
+    public fireAuth: Auth,
+    public firestore: Firestore,
+    public router: Router,
+    public ngZone: NgZone
+  ) {
+    /* Saving user data in localstorage when 
+    logged in and setting up null when logged out */
+    authState(fireAuth).subscribe((user) => {
+      if (user) {
+        this.userData = user;
+        localStorage.setItem('user', JSON.stringify(this.userData));
+        JSON.parse(localStorage.getItem('user'));
+      } else {
+        localStorage.setItem('user', null);
+        JSON.parse(localStorage.getItem('user'));
+      }
+    });
   }
 
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user !== null && user.emailVerified !== false ? true : false;
+  }
 
-  async loginWithGoogle2() {
-    console.log('object');
-    await 
-      signInWithPopup(this.fireAuth,new GoogleAuthProvider())
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
-        // The signed-in user info.
-        const user = result.user;
+  GoogleAuth() {
+    return this.AuthLogin();
+  }
 
-
-        console.log(token)
-
-        // ...
-      }).catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
+  async AuthLogin() {
+    try {
+      const result = await signInWithPopup(
+        this.fireAuth,
+        new GoogleAuthProvider()
+      );
+      this.ngZone.run(() => {
+        this.router.navigate(['/tasks']);
       });
+      this.SetUserData(result.user);
+    } catch (error) {
+      window.alert(error);
+    }
+  }
+
+  async SetUserData(user: User) {
+    const userData = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+    };
+    await addDoc(collection(this.firestore, 'users'), user.uid.toString)
+      .then((docRef) => setDoc(docRef, { merge: true }))
+      .catch((error) => console.error('Error adding document: ', error));
+  }
+
+  // Sign out
+  async SignOut() {
+    await this.fireAuth.signOut();
+    localStorage.removeItem('user');
+    this.router.navigate(['sign-in']);
   }
 }
-
-
-
