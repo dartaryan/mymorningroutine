@@ -12,7 +12,7 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
-import { AboutComponent } from './components/about/about.component';
+import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import {
@@ -33,10 +33,17 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.component';
 import { NgxEmojModule } from 'ngx-emoj';
 import { LoginComponent } from './pages/login/login.component';
+import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
+
 const appRoutes: Routes = [
-  { path: '', component: TasksComponent },
+  { path: 'login', component: LoginComponent},
+  { path: '', component: LoginComponent },
   { path: 'about', component: AboutComponent },
 ];
+
+
+
 
 @NgModule({
   declarations: [
@@ -52,21 +59,25 @@ const appRoutes: Routes = [
     OrderByPipe,
     EmojiPickerComponent,
     LoginComponent,
+    LoginButtonComponent,
   ],
 
   imports: [
+    
     BrowserModule,
+    CoolSocialLoginButtonsModule,
     FontAwesomeModule,
     HttpClientModule,
     NgxEmojiPickerModule.forRoot(),
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     SocialLoginModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+  
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     NgxEmojModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
   ],
   providers: [
     {

@@ -10,22 +10,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'My Morning Routine';
-  showAddTask: boolean = false;
-  subscription: Subscription;
 
-  constructor(private uiService: UiService, private router: Router) {
-    this.subscription = this.uiService
-      .onToggle()
-      .subscribe((value) => (this.showAddTask = value));
-  }
+  constructor() {}
 
   ngOnInit(): void {}
-
-  toggleAddTask() {
-    this.uiService.toggleAddTask();
-  }
-
-  hasRoute(route: string) {
-    return this.router.url === route;
-  }
 }
