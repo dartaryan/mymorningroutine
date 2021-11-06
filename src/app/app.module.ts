@@ -35,15 +35,14 @@ import { NgxEmojModule } from 'ngx-emoj';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginButtonComponent } from './components/login-button/login-button.component';
 import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: TasksComponent },
   { path: 'about', component: AboutComponent },
 ];
-
-
-
 
 @NgModule({
   declarations: [
@@ -63,7 +62,6 @@ const appRoutes: Routes = [
   ],
 
   imports: [
-    
     BrowserModule,
     CoolSocialLoginButtonsModule,
     FontAwesomeModule,
@@ -72,34 +70,15 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     SocialLoginModule,
-  
+
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     NgxEmojModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireAuthModule,
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('clientId'),
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId'),
-          },
-        ],
-        onError: (err) => {
-          console.error(err);
-        },
-      } as SocialAuthServiceConfig,
-    },
-  ],
+
   bootstrap: [AppComponent],
   exports: [OrderByPipe],
 })
