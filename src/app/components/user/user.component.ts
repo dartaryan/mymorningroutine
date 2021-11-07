@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialAuthService, SocialUser } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/User';
 
 @Component({
   selector: 'app-user',
@@ -8,15 +9,27 @@ import { GoogleLoginProvider } from 'angularx-social-login';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  user: SocialUser | undefined
+  user: User | undefined;
   loggedIn: boolean = false;
+  userName: string = '';
+  userPhoto: string = '';
+  authService: AuthService
 
-  constructor(private authService: SocialAuthService) {}
-
+  constructor() {}
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = user != null;
-    });
+    this.setNameAndPhoto();
+  }
+
+  setNameAndPhoto() {
+    if (this.authService.userData) {
+      console.log(this.authService.userData)
+      this.userName = this.authService.userData.displayName;
+      this.userPhoto = this.authService.userData.photoURL;
+
+      
+    } else {
+      this.userName = 'Good Morning!';
+      this.userPhoto = 'https://cdn-icons-png.flaticon.com/512/382/382576.png';
+    }
   }
 }

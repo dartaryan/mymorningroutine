@@ -18,6 +18,7 @@ import { addDoc, collection, Firestore, setDoc } from '@angular/fire/firestore';
 export class AuthService {
   userData: any;
   static userData: any;
+  
   constructor(
     public fireAuth: Auth,
     public firestore: Firestore,
@@ -37,6 +38,7 @@ export class AuthService {
       }
     });
   }
+  
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));

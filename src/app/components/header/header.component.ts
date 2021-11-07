@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   loggedIn(){
-    console.log(this.authService)
+
     return this.authService.isLoggedIn
 
   }
