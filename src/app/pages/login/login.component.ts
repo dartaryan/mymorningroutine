@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
-
-
 
 @Component({
   selector: 'app-login',
@@ -9,8 +8,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  
-  constructor(public authService: AuthService) { }
+  loginStatus$ = new BehaviorSubject<boolean>(false);
+
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {}
 }
