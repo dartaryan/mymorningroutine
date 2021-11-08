@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ButtonComponent } from './components/button/button.component';
+import { ButtonComponent } from './components/buttons/button/button.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
@@ -34,8 +34,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserTasksPipe } from './pipes/user-tasks.pipe';
 import { LoginSunComponent } from './decorations/login-sun/login-sun.component';
 import { LoginGreetingComponent } from './decorations/login-greeting/login-greeting.component';
-import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
+import { LogoutButtonComponent } from './components/buttons/logout-button/logout-button.component';
 import { FlyingSquaresComponent } from './decorations/flying-squares/flying-squares.component';
+import { GoogleButtonComponent } from './components/buttons/google-button/google-button.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     LoginGreetingComponent,
     LogoutButtonComponent,
     FlyingSquaresComponent,
+    GoogleButtonComponent,
   ],
 
   imports: [
