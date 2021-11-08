@@ -1,16 +1,8 @@
+
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
 <div class="row" *ngIf="authService.userData as user">
-  <img
-    class="profile-img"
-    src="{{
-      user.photoURL
-        ? user.photoURL
-        : 'https://cdn-icons-png.flaticon.com/512/169/169367.png'
-    }}"
-    alt="{{ user.displayName }}"
-  />
-</div>
+
 
 <ng-container *ngIf="tasks$ | async as tasks">
   <app-task-item

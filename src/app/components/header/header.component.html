@@ -1,4 +1,5 @@
 <header>
+  <app-user></app-user>
   <h1>{{ loggedUser() }}{{ title }}</h1>
   <app-logout-button *ngIf="loggedIn()" (click)="logOut()"></app-logout-button>
 </header>

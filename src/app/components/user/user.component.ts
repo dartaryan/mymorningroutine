@@ -13,9 +13,9 @@ export class UserComponent implements OnInit {
   loggedIn: boolean = false;
   userName: string = '';
   userPhoto: string = '';
-  authService: AuthService
 
-  constructor() {}
+
+  constructor(public authService: AuthService) {}
   ngOnInit() {
     
   }

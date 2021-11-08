@@ -1,14 +1,27 @@
-<div class="card">
+<!-- <div class="card" *ngIf="authService.userData as user">
   <div class="img"><span></span><span></span><span></span><span></span></div>
   <div class="content">
-    <h2>{{userName}}</h2>
+    <h4>{{user.displayName}}</h4>
   </div>
 </div>
 <style>
   .card {
-    background: url("https://cdn.pocket-lint.com/r/s/970x/assets/images/151442-cameras-feature-stunning-photos-from-the-national-sony-world-photography-awards-2020-image1-evuxphd3mr-jpg.webp?v1");
+    background: url("https://cdn-icons-png.flaticon.com/512/382/382576.png");
   }
   .card .img span {
-    background: url("https://cdn.pocket-lint.com/r/s/970x/assets/images/151442-cameras-feature-stunning-photos-from-the-national-sony-world-photography-awards-2020-image1-evuxphd3mr-jpg.webp?v1");
+    background: url("https://cdn-icons-png.flaticon.com/512/382/382576.png");
   }
-</style>
+</style> -->
+
+
+<div *ngIf="authService.userData as user">
+<img
+class="profile-img"
+src="{{
+  user.photoURL
+    ? user.photoURL
+    : 'https://cdn-icons-png.flaticon.com/512/169/169367.png'
+}}"
+alt="{{ user.displayName }}"
+/>
+</div>
