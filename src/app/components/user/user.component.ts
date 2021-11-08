@@ -17,11 +17,11 @@ export class UserComponent implements OnInit {
 
   constructor() {}
   ngOnInit() {
-    this.setNameAndPhoto();
+    
   }
 
   setNameAndPhoto() {
-    if (this.authService.userData) {
+    if (this.authService.isLoggedIn) {
       console.log(this.authService.userData)
       this.userName = this.authService.userData.displayName;
       this.userPhoto = this.authService.userData.photoURL;

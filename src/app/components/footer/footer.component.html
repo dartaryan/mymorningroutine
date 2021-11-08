@@ -9,4 +9,4 @@ text="{{ showAddTask ? 'Close' : 'Add' }}"
 <p>Copyright &copy; 2021 </p>
 <a routerLink="/about">About</a>
 </footer>
-<app-user *ngIf="hasRoute('/tasks')"></app-user>
+<app-user *ngIf="loggedIn()"></app-user>

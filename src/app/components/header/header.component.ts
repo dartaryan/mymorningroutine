@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   loggedIn(){
 
     return this.authService.isLoggedIn
+    
 
   }
 
@@ -38,7 +39,6 @@ export class HeaderComponent implements OnInit {
       return this.authService.userData.displayName.split(" ")[0] +"'s";
     } catch (error) {
       return "My"
-      console.log(error);
     }
   }
 }
