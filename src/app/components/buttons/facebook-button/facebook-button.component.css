@@ -1,0 +1,15 @@
+.fb-btn{
+    background-color: #3b5998 ;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-style: bold;
+    margin: 2px 2px;
+    border-radius: 5px;
+    width: 100%;
+  
+}

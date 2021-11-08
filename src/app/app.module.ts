@@ -37,6 +37,7 @@ import { LoginGreetingComponent } from './decorations/login-greeting/login-greet
 import { LogoutButtonComponent } from './components/buttons/logout-button/logout-button.component';
 import { FlyingSquaresComponent } from './decorations/flying-squares/flying-squares.component';
 import { GoogleButtonComponent } from './components/buttons/google-button/google-button.component';
+import { FacebookButtonComponent } from './components/buttons/facebook-button/facebook-button.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     LogoutButtonComponent,
     FlyingSquaresComponent,
     GoogleButtonComponent,
+    FacebookButtonComponent,
   ],
 
   imports: [
