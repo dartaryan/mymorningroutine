@@ -14,38 +14,38 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
   title: string = ' Morning Routine';
 
   displayName = 'My';
 
   user: User;
 
-  // user$ = this.authService.getAuthState().pipe(
-  //   tap((user) => {
-  //     if (user) {
-  //       this.displayName = user.displayName.split(' ')[0] + "'s";
-  //     } else {
-  //       this.displayName = 'My';
-  //     }
-  //   })
-  // );
+  user$ = this.authService.getAuthState().pipe(
+    tap((user) => {
+      if (user) {
+        this.displayName = user.displayName.split(' ')[0] + "'s";
+      } else {
+        this.displayName = 'My';
+      }
+    })
+  );
 
   constructor(private authService: AuthService,private cd:ChangeDetectorRef) {}
 
-  ngOnInit(): void {
-    this.authService.getAuthState().pipe(
-      tap((user) => {
-        if (user) {
-          this.user = user;
-          this.displayName = user.displayName.split(' ')[0] + "'s";
-        } else {
-          this.displayName = 'My';
-        }
-        this.cd.markForCheck();
-      })
-    ).subscribe();
-  }
+  // ngOnInit(): void {
+  //   this.authService.getAuthState().pipe(
+  //     tap((user) => {
+  //       if (user) {
+  //         this.user = user;
+  //         this.displayName = user.displayName.split(' ')[0] + "'s";
+  //       } else {
+  //         this.displayName = 'My';
+  //       }
+  //       this.cd.markForCheck();
+  //     })
+  //   ).subscribe();
+  // }
 
   logOut() {
     this.authService.SignOut();

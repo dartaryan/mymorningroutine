@@ -1,11 +1,11 @@
-<div *ngIf="authService.currentUser as user">
+<div *ngIf="user$ | async">
 <img
 class="profile-img"
 src="{{
-  user.photoURL
-    ? user.photoURL
+  userPhoto
+    ? userPhoto
     : 'https://cdn-icons-png.flaticon.com/512/169/169367.png'
 }}"
-alt="{{ user.displayName }}"
+alt="{{ displayName }}"
 />
 </div>

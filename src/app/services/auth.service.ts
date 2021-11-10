@@ -4,6 +4,7 @@ import {
   Auth,
   signInWithPopup,
   authState,
+  FacebookAuthProvider
 } from '@angular/fire/auth';
 import 'firebase/auth';
 import { User } from '../User';
@@ -49,14 +50,19 @@ export class AuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin();
+    return this.AuthLogin("g");
   }
 
-  async AuthLogin() {
+  FacebookAuth(){
+    return this.AuthLogin("fb");
+  }
+
+  async AuthLogin(provider: string) {
+    const currentProvider = provider == "g" ?   new GoogleAuthProvider() :  new FacebookAuthProvider()
     try {
       const result = await signInWithPopup(
         this.fireAuth,
-        new GoogleAuthProvider()
+        currentProvider
       );
 
       this.SetUserData(result.user);
@@ -89,7 +95,7 @@ export class AuthService {
   async SignOut() {
     await this.fireAuth.signOut();
     localStorage.removeItem('user');
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 
   getAuthState() {
