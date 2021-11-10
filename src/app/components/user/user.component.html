@@ -1,20 +1,4 @@
-<!-- <div class="card" *ngIf="authService.userData as user">
-  <div class="img"><span></span><span></span><span></span><span></span></div>
-  <div class="content">
-    <h4>{{user.displayName}}</h4>
-  </div>
-</div>
-<style>
-  .card {
-    background: url("https://cdn-icons-png.flaticon.com/512/382/382576.png");
-  }
-  .card .img span {
-    background: url("https://cdn-icons-png.flaticon.com/512/382/382576.png");
-  }
-</style> -->
-
-
-<div *ngIf="authService.userData as user">
+<div *ngIf="authService.currentUser as user">
 <img
 class="profile-img"
 src="{{

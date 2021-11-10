@@ -47,7 +47,7 @@ export class AddTaskComponent implements OnInit {
       done: this.done,
       step: this.step,
       id: '',
-      uid: this.authService.userData.uid
+      uid: this.authService.currentUser.uid
     };
     this.onAddTask.emit(newTask);
 

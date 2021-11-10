@@ -1,12 +1,12 @@
 
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
-<div class="row" *ngIf="authService.userData as user">
+<div class="row" *ngIf="authService.currentUser as user">
 
 
 <ng-container *ngIf="tasks$ | async as tasks">
   <app-task-item
-    *ngFor="let task of tasks | orderBy | userTasks: authService.userData.uid"
+    *ngFor="let task of tasks | orderBy | userTasks: authService.currentUser.uid"
     [task]="task"
     (onDeleteTask)="deleteTask(task)"
     (onToggledone)="toggledone(task)"

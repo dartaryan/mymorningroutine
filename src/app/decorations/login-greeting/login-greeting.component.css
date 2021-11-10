@@ -15,11 +15,11 @@ body {
 }
 
 h1 {
-  font: bold calc(1rem + 3vw) "Signika", sans-serif;
+  font: bold calc(1rem + 2vw) "Signika", sans-serif;
   user-select: none;
   position: absolute;
   top: 40%;
-  left: 20%;
+  left: 15%;
 }
 
 h1 span {

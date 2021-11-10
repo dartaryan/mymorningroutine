@@ -21,15 +21,15 @@ export class UserComponent implements OnInit {
   }
 
   setNameAndPhoto() {
-    if (this.authService.isLoggedIn) {
-      console.log(this.authService.userData)
-      this.userName = this.authService.userData.displayName;
-      this.userPhoto = this.authService.userData.photoURL;
+    // if (this.authService.isLoggedIn) {
+    //   console.log(this.authService.userData)
+    //   this.userName = this.authService.userData.displayName;
+    //   this.userPhoto = this.authService.userData.photoURL;
 
       
-    } else {
-      this.userName = 'Good Morning!';
-      this.userPhoto = 'https://cdn-icons-png.flaticon.com/512/382/382576.png';
-    }
+    // } else {
+    //   this.userName = 'Good Morning!';
+    //   this.userPhoto = 'https://cdn-icons-png.flaticon.com/512/382/382576.png';
+    // }
   }
 }

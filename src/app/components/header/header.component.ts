@@ -1,44 +1,53 @@
-import { Component, NgZone, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { UiService } from 'src/app/services/ui.service';
-import { Router } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { User } from '@angular/fire/auth';
+import { tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   title: string = ' Morning Routine';
-  router: Router;
 
-  constructor(public authService: AuthService) {
+  displayName = 'My';
 
+  user: User;
+
+  // user$ = this.authService.getAuthState().pipe(
+  //   tap((user) => {
+  //     if (user) {
+  //       this.displayName = user.displayName.split(' ')[0] + "'s";
+  //     } else {
+  //       this.displayName = 'My';
+  //     }
+  //   })
+  // );
+
+  constructor(private authService: AuthService,private cd:ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.authService.getAuthState().pipe(
+      tap((user) => {
+        if (user) {
+          this.user = user;
+          this.displayName = user.displayName.split(' ')[0] + "'s";
+        } else {
+          this.displayName = 'My';
+        }
+        this.cd.markForCheck();
+      })
+    ).subscribe();
   }
 
-  ngOnInit(): void {}
-
-  hasRoute(route: string) {
-    return this.router.url === route;
-  }
-
-  loggedIn(){
-
-    return this.authService.isLoggedIn
-    
-
-  }
-
-  logOut(){
-    this.authService.SignOut()
-  }
-
-  loggedUser(){
-    try {
-      return this.authService.userData.displayName.split(" ")[0] +"'s";
-    } catch (error) {
-      return "My"
-    }
+  logOut() {
+    this.authService.SignOut();
   }
 }

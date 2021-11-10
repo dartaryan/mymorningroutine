@@ -1,4 +1,4 @@
-.fb-btn{
+/* .fb-btn{
     background-color: #3b5998 ;
     border: none;
     color: white;
@@ -12,4 +12,58 @@
     border-radius: 5px;
     width: 100%;
   
-}
+} */
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .buttons {
+    /* margin: 10%; */
+    text-align: center;
+  }
+  
+  
+  .fb-btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+   
+  
+    border-radius: 10px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .fb-btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    color: #3b5998
+  }
+  
+  .fb-btn-hover:focus {
+    outline: none;
+  }
+  
+  
+  .fb-btn-hover.color-2 {
+    background-image: linear-gradient(to right,#3b5998, #3b5998, #ffffff, #ffffff);
+    box-shadow: 0 4px 15px 0 rgba(90, 88, 88, 0.418);
+    ;
+  }
+  
