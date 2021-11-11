@@ -27,7 +27,6 @@ import { NgxEmojModule } from 'ngx-emoj';
 import { LoginComponent } from './pages/login/login.component';
 
 import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
-import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './services/auth.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +38,7 @@ import { FlyingSquaresComponent } from './decorations/flying-squares/flying-squa
 import { GoogleButtonComponent } from './components/buttons/google-button/google-button.component';
 import { FacebookButtonComponent } from './components/buttons/facebook-button/facebook-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -68,7 +68,6 @@ const appRoutes: Routes = [
     FlyingSquaresComponent,
     GoogleButtonComponent,
     FacebookButtonComponent,
-  
   ],
 
   imports: [
@@ -88,6 +87,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

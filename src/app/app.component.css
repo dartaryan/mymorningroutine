@@ -1,4 +1,17 @@
-* {
-    font-family: "Assistant", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&display=swap");
 
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-card {
+  background-color: #ffd54d;
+  max-width: 500px;
+  min-height: 300px;
+  margin: auto;
+  padding: 1em;
+
+}
+
