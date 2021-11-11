@@ -80,11 +80,12 @@ export class AuthService {
     };
 
     try {
-      const docRef = await addDoc(
-        collection(this.firestore, 'users'),
-        userData
-      );
-      setDoc(docRef, { merge: true });
+      console.log(user)
+      // const docRef = await addDoc(
+      //   collection(this.firestore, 'users'),
+      //   userData
+      // );
+      // setDoc(docRef, { merge: true });
       this.router.navigate(['/tasks']);
     } catch (error) {
       console.error('Error adding document: ', error);

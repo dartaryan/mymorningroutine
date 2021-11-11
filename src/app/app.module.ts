@@ -38,6 +38,7 @@ import { LogoutButtonComponent } from './components/buttons/logout-button/logout
 import { FlyingSquaresComponent } from './decorations/flying-squares/flying-squares.component';
 import { GoogleButtonComponent } from './components/buttons/google-button/google-button.component';
 import { FacebookButtonComponent } from './components/buttons/facebook-button/facebook-button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -67,6 +68,7 @@ const appRoutes: Routes = [
     FlyingSquaresComponent,
     GoogleButtonComponent,
     FacebookButtonComponent,
+  
   ],
 
   imports: [
@@ -85,6 +87,7 @@ const appRoutes: Routes = [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
