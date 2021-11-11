@@ -1,34 +1,32 @@
-<button *ngIf="!toggled" class="emoji-btn" (click)="openEmojis()">{{icon}} </button>
+<button *ngIf="!toggled" class="emoji-btn" (click)="openEmojis()">
+  {{ icon }}
+</button>
 
-<div *ngIf="toggled">
-
-	<ngx-emoj
-	(onemojipick)="handleEmoji($event)"
-	[width]="'23vh'"
-	[height]="'40vh'"
-	[theme]="      {
-		martShowHeader: true,
-		martShowFooter: false,
-		martHeaderPadding: {x: '5px', y: '0px'},
-		martFooterPadding: {x: '0px', y: '0px'},
-		martHeaderBG: '#cac2c2a6',
-		martBG: '#ffffffa6',
-		martCategoryColor: '#363636',
-		martCategoryColorActive:  '#e5b20e',
-		martActiveCategoryIndicatorColor: '#e5b20e',
-		martEmojiFontSize: '120%',
-		martCategoryFontSize: '18px',
-		martBorderRadius: '13px',
-		martActiveCategoryIndicatorHeight: '4px',
-		martEmojiPadding: {x: '30px', y: '30px'}
-	  }
-	"
-	[maxRecentEmoji]="'Number'"
-	[recentEmojiStoreKey]="'Recent'"
-	[searchEmojiPlaceholderText]="'Search'"
-	[emojiNotFoundText]="'Maybe try something else? 😕'"
+<div *ngIf="toggled" class="emoji-card">
+  <ngx-emoj
+    (onemojipick)="handleEmoji($event)"
+    [width]="'23vh'"
+    [height]="'40vh'"
+    [theme]="{
+      martShowHeader: true,
+      martShowFooter: false,
+      martHeaderPadding: { x: '5px', y: '0px' },
+      martFooterPadding: { x: '0px', y: '0px' },
+      martHeaderBG: '#cac2c2a6',
+      martBG: '#ffffffa6',
+      martCategoryColor: '#363636',
+      martCategoryColorActive: '#e5b20e',
+      martActiveCategoryIndicatorColor: '#e5b20e',
+      martEmojiFontSize: '120%',
+      martCategoryFontSize: '18px',
+      martBorderRadius: '13px',
+      martActiveCategoryIndicatorHeight: '4px',
+      martEmojiPadding: { x: '30px', y: '30px' }
+    }"
+    [maxRecentEmoji]="'Number'"
+    [recentEmojiStoreKey]="'Recent'"
+    [searchEmojiPlaceholderText]="'Search'"
+    [emojiNotFoundText]="'Maybe try something else? 😕'"
   >
   </ngx-emoj>
-
-  
 </div>

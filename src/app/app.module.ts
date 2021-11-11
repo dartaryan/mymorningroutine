@@ -15,7 +15,7 @@ import { NgxEmojiPickerModule } from 'ngx-emoji-picker';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SocialLoginModule } from 'angularx-social-login';
-import { UserComponent } from './components/user/user.component';
+
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
@@ -57,7 +57,7 @@ const appRoutes: Routes = [
     AddTaskComponent,
     AboutComponent,
     FooterComponent,
-    UserComponent,
+
     OrderByPipe,
     EmojiPickerComponent,
     LoginComponent,

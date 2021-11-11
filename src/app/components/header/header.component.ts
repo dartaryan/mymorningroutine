@@ -14,38 +14,26 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent  {
+export class HeaderComponent {
   title: string = ' Morning Routine';
-
   displayName = 'My';
-
+  userPhoto = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
   user: User;
 
   user$ = this.authService.getAuthState().pipe(
     tap((user) => {
       if (user) {
         this.displayName = user.displayName.split(' ')[0] + "'s";
+        this.userPhoto = user.photoURL
+          ? user.photoURL
+          : 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
       } else {
         this.displayName = 'My';
       }
     })
   );
 
-  constructor(private authService: AuthService,private cd:ChangeDetectorRef) {}
-
-  // ngOnInit(): void {
-  //   this.authService.getAuthState().pipe(
-  //     tap((user) => {
-  //       if (user) {
-  //         this.user = user;
-  //         this.displayName = user.displayName.split(' ')[0] + "'s";
-  //       } else {
-  //         this.displayName = 'My';
-  //       }
-  //       this.cd.markForCheck();
-  //     })
-  //   ).subscribe();
-  // }
+  constructor(private authService: AuthService) {}
 
   logOut() {
     this.authService.SignOut();

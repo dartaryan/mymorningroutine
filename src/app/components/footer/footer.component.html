@@ -1,6 +1,11 @@
+<mat-card-footer>
+
+    
+</mat-card-footer>
+
 <footer>
 
-<app-button *ngIf="hasRoute('/tasks')"
+<app-button *ngIf="user$ | async"
 color="{{ showAddTask ? 'darkred' : 'green' }}"
 text="{{ showAddTask ? 'Close' : 'Add' }}"
 (btnClick)="toggleAddTask()"
