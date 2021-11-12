@@ -4,7 +4,7 @@ import {
   Auth,
   signInWithPopup,
   authState,
-  FacebookAuthProvider
+  FacebookAuthProvider,
 } from '@angular/fire/auth';
 import 'firebase/auth';
 import { User } from '../User';
@@ -16,13 +16,11 @@ import { tap } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  
   private _currentUser: User;
 
   get currentUser(): User {
     return this._currentUser;
   }
-
 
   constructor(
     public fireAuth: Auth,
@@ -50,20 +48,18 @@ export class AuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin("g");
+    return this.AuthLogin('g');
   }
 
-  FacebookAuth(){
-    return this.AuthLogin("fb");
+  FacebookAuth() {
+    return this.AuthLogin('fb');
   }
 
   async AuthLogin(provider: string) {
-    const currentProvider = provider == "g" ?   new GoogleAuthProvider() :  new FacebookAuthProvider()
+    const currentProvider =
+      provider == 'g' ? new GoogleAuthProvider() : new FacebookAuthProvider();
     try {
-      const result = await signInWithPopup(
-        this.fireAuth,
-        currentProvider
-      );
+      const result = await signInWithPopup(this.fireAuth, currentProvider);
 
       this.SetUserData(result.user);
     } catch (error) {
@@ -80,7 +76,7 @@ export class AuthService {
     };
 
     try {
-      console.log(user)
+      console.log(user);
       // const docRef = await addDoc(
       //   collection(this.firestore, 'users'),
       //   userData

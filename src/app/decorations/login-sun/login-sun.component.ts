@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-sun.component.css']
 })
 export class LoginSunComponent implements OnInit {
-
+  dayNight: string = "day";
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
+

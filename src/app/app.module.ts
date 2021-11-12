@@ -39,6 +39,7 @@ import { GoogleButtonComponent } from './components/buttons/google-button/google
 import { FacebookButtonComponent } from './components/buttons/facebook-button/facebook-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -72,22 +73,24 @@ const appRoutes: Routes = [
 
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    FormsModule,
     CoolSocialLoginButtonsModule,
     FontAwesomeModule,
     HttpClientModule,
     NgxEmojiPickerModule.forRoot(),
-    FormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+
     SocialLoginModule,
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    NgxEmojModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    NgxEmojModule,
     AngularFireAuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

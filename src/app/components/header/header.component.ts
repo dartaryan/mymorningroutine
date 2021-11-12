@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -5,8 +6,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { User } from '@angular/fire/auth';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +21,20 @@ export class HeaderComponent {
   displayName = 'My';
   userPhoto = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
   user: User;
+  dayLight: string;
+  time$ = this.uiService.getTime();
+
+  dayMode$ = this.uiService.getTime().pipe(
+    tap((time) => {
+      const daysign = time.toLocaleString('en-US').split(' ')[2];
+      const hour = time.getHours();
+      if (daysign === 'PM' && hour >= 18) {
+        this.dayLight = 'PM';
+      } else {
+        this.dayLight = 'AM';
+      }
+    })
+  );
 
   user$ = this.authService.getAuthState().pipe(
     tap((user) => {
@@ -33,7 +49,7 @@ export class HeaderComponent {
     })
   );
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private uiService: UiService) {}
 
   logOut() {
     this.authService.SignOut();

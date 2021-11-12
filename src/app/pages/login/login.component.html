@@ -1,10 +1,14 @@
 <div class="login-content">
-  <div class="welcome-decors">
-    <app-login-sun></app-login-sun>
-    <app-login-greeting></app-login-greeting>
-  </div>
+  <!-- <div class="welcome-decors">
+    <app-login-sun></app-login-sun>   
+  </div> -->
+  <img
+    src="https://images.vexels.com/media/users/3/145135/isolated/lists/76608161d143a7d27f20cdcc336bc09c-sun-sharp-rays-big-and-small-icon.png"
+    mat-card-image
+  />
+
   <div class="login-buttons">
-    <app-google-button (click)="loginGoogle()"> </app-google-button>
-    <app-facebook-button (click)="loginFacebook()"> </app-facebook-button>
+    <app-google-button></app-google-button>
+    <app-facebook-button></app-facebook-button>
   </div>
 </div>
