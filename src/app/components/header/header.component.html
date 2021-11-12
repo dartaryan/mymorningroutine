@@ -1,11 +1,13 @@
-<div class="content" *ngIf="dayMode$ |async"></div> 
-{{dayLight}}
+<div class="content" *ngIf="dayMode$ | async"></div>
+<!-- {{ dayLight }} -->
 
-<mat-card-header *ngIf="user$ | async; else elseBlock">
+<mat-card-header class="card-container"
+  *ngIf="user$ | async; else elseBlock"
+>
   <mat-card-title>{{ displayName }}{{ title }}</mat-card-title>
   <mat-card-subtitle>{{ time$ | async | date: "HH:mm:ss" }}</mat-card-subtitle>
   <img src="{{ userPhoto }}" mat-card-avatar />
-  <app-logout-button (click)="logOut()"></app-logout-button>
+  <app-logout-button></app-logout-button>
 </mat-card-header>
 
 <ng-template #elseBlock>
@@ -14,8 +16,11 @@
   </mat-card-header> -->
 
   <mat-card-header>
-    <mat-card-title> Good {{dayLight =="AM"? "Morning" : "Evening"}}! </mat-card-title>
+    <mat-card-title>
+      Good {{ dayLight == "AM" ? "Morning" : "Evening" }}!
+    </mat-card-title>
     <mat-card-subtitle>{{ time$ | async | date: "h:mm a" }}</mat-card-subtitle>
-  
   </mat-card-header>
 </ng-template>
+
+

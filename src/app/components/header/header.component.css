@@ -4,3 +4,8 @@ header {
   align-items: center;
   margin-bottom: 20px;
 }
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}

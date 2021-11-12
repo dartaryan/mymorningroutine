@@ -1,12 +1,29 @@
-<div [ngClass]="{ done: task.done }" class="task"
-(dblclick)="onToggle(task)">
-  <h3> <p>{{ task.step }}</p>
-    {{ task.icon }} {{ task.text }}
-    <fa-icon
-      (click)="onDelete(task)"
-      [ngStyle]="{ color: 'darkred' }"
-      [icon]="faTimes"
-    ></fa-icon>
-  </h3>
- 
-</div>
+<mat-card
+  [ngClass]="{ done: task.done }"
+  class="task"
+  (dblclick)="onToggle(task)"
+>
+  <mat-grid-list cols="15" rowHeight="5em">
+    <mat-grid-tile
+      class="task-step"
+      style="border-right: 2px solid rgba(87, 87, 87, 0.699)"
+      colspan="2"
+      rowspan="1"
+      ><h1>{{ task.step }}</h1>
+    </mat-grid-tile>
+    <mat-grid-tile class="task-icon" colspan="2" rowspan="1"
+      ><h1>{{ task.icon }}</h1></mat-grid-tile
+    >
+    <mat-grid-tile class="task-text" colspan="10" rowspan="1"
+      ><h1>{{ task.text }}</h1></mat-grid-tile
+    >
+    <mat-grid-tile class="task-delete" colspan="1" rowspan="1">
+      <h1>
+        <fa-icon
+          (click)="onDelete(task)"
+          [ngStyle]="{ color: 'darkred' }"
+          [icon]="faTimes"
+        ></fa-icon></h1
+    ></mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

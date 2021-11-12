@@ -1,25 +1,22 @@
 .task {
-  background: rgba(255, 255, 255, 0.651);
+  background: rgba(255, 255, 255, 0.521);
   margin: 5px;
-  padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  -webkit-touch-callout:none;
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.task:hover{
+.task:hover {
   background: rgba(255, 255, 255, 0.329);
   transition: 0.2s ease-in-out;
 }
 
 .task.done {
-  
   border-left: 5px solid green;
   background-color: rgba(44, 131, 44, 0.349);
-  
 }
 .task.done:hover {
   border-left: 5px solid green;
@@ -27,9 +24,36 @@
   transition: 0.5s ease-in-out;
 }
 
+mat-card {
+  padding: 5px;
+}
 
-.task h3 {
-  display: flex;
+.task-step h1,
+.task-icon h1,
+.task-text h1,
+.task-delete h1 {
   align-items: center;
-  justify-content: space-between;
+  align-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.task-icon h1 {
+  font-size: 35px;
+  padding-left: 15px;
+}
+
+.task-text h1 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.task-delete h1 {
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+.task-step h1 {
+  font-size: 18px;
+  font-weight: bold;
 }
