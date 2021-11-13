@@ -2,7 +2,6 @@
   background: rgba(255, 255, 255, 0.521);
   margin: 5px;
   cursor: pointer;
-  border-radius: 5px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -28,10 +27,10 @@ mat-card {
   padding: 5px;
 }
 
-.task-step h1,
+.task-step h2,
 .task-icon h1,
 .task-text h1,
-.task-delete h1 {
+.task-delete h2 {
   align-items: center;
   align-content: center;
   text-align: center;
@@ -39,21 +38,17 @@ mat-card {
 }
 
 .task-icon h1 {
-  font-size: 35px;
   padding-left: 15px;
 }
 
 .task-text h1 {
-  font-size: 22px;
   font-weight: 500;
 }
 
 .task-delete h1 {
-  font-size: 25px;
   padding-right: 5px;
 }
 
 .task-step h1 {
-  font-size: 18px;
   font-weight: bold;
 }

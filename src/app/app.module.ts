@@ -43,6 +43,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -97,6 +98,7 @@ const appRoutes: Routes = [
     MatDividerModule,
     MatListModule,
     MatGridListModule,
+    MatExpansionModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

@@ -19,7 +19,7 @@ export class AddTaskComponent implements OnInit {
   subscription: Subscription;
   toggled: boolean = false;
 
-  constructor(private uiService: UiService,public authService: AuthService) {
+  constructor(private uiService: UiService, public authService: AuthService) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
@@ -32,7 +32,7 @@ export class AddTaskComponent implements OnInit {
     this.toggled = !this.toggled;
   }
 
-  onChosenEmoj(emoj: any ) {
+  onChosenEmoj(emoj: any) {
     this.icon = emoj;
   }
 
@@ -47,7 +47,7 @@ export class AddTaskComponent implements OnInit {
       done: this.done,
       step: this.step,
       id: '',
-      uid: this.authService.currentUser.uid
+      uid: this.authService.currentUser.uid,
     };
     this.onAddTask.emit(newTask);
 

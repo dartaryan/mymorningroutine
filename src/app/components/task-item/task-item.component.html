@@ -9,7 +9,7 @@
       style="border-right: 2px solid rgba(87, 87, 87, 0.699)"
       colspan="2"
       rowspan="1"
-      ><h1>{{ task.step }}</h1>
+      ><h2>{{ task.step }}</h2>
     </mat-grid-tile>
     <mat-grid-tile class="task-icon" colspan="2" rowspan="1"
       ><h1>{{ task.icon }}</h1></mat-grid-tile
@@ -18,12 +18,12 @@
       ><h1>{{ task.text }}</h1></mat-grid-tile
     >
     <mat-grid-tile class="task-delete" colspan="1" rowspan="1">
-      <h1>
+      <h2>
         <fa-icon
           (click)="onDelete(task)"
           [ngStyle]="{ color: 'darkred' }"
           [icon]="faTimes"
-        ></fa-icon></h1
+        ></fa-icon></h2
     ></mat-grid-tile>
   </mat-grid-list>
 </mat-card>

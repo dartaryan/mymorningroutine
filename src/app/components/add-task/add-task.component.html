@@ -1,4 +1,4 @@
-<div class="row" *ngIf="showAddTask">
+<!-- <div class="row" *ngIf="showAddTask">
   <div class="current-icon">
     <app-emoji-picker (chosenEmoj)="onChosenEmoj($event)"></app-emoji-picker>
   </div>
@@ -33,4 +33,84 @@
       <input type="submit" value="Save Task" class="btn-block" />
     </form>
   </div>
-</div>
+</div> -->
+
+<mat-expansion-panel class="add-card">
+  <mat-expansion-panel-header>
+    <mat-panel-title>New Task...</mat-panel-title>
+  </mat-expansion-panel-header>
+  <form (ngSubmit)="onSubmit()">
+    <mat-grid-list class="form-content" cols="6">
+      <mat-grid-tile colspan="1" rowspan="1">
+        <input
+          class="form-input"
+          type="number"
+          name="step"
+          [(ngModel)]="step"
+          id="step"
+          value=""
+          placeholder="#"
+          autocomplete="off"
+        />
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="5" rowspan="1">
+        <input
+          class="form-input"
+          type="text"
+          name="text"
+          [(ngModel)]="text"
+          id="text"
+          placeholder="Choose a task name"
+          autocomplete="off"
+        />
+      </mat-grid-tile>
+
+      <mat-grid-tile class="current-icon" colspan="1" rowspan="1">
+        <app-emoji-picker
+          (chosenEmoj)="onChosenEmoj($event)"
+        ></app-emoji-picker>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-action-row>
+      <input type="submit" value="Save Task" class="save-btn" />
+    </mat-action-row>
+  </form>
+</mat-expansion-panel>
+
+<!-- <div class="row" *ngIf="showAddTask">
+  <div class="current-icon">
+    <app-emoji-picker (chosenEmoj)="onChosenEmoj($event)"></app-emoji-picker>
+  </div>
+  <div class="form-fields">
+    <form class="add-form" (ngSubmit)="onSubmit()">
+      <div class="form-rows">
+        <div class="form-control column left">
+          <input
+            class="form-input"
+            type="number"
+            name="step"
+            [(ngModel)]="step"
+            id="step"
+            value=""
+            placeholder="#"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form-control column right">
+          <input
+            class="form-input"
+            type="text"
+            name="text"
+            [(ngModel)]="text"
+            id="text"
+            placeholder="Choose a task name"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <input type="submit" value="Save Task" class="btn-block" />
+    </form>
+  </div>
+</div> -->
