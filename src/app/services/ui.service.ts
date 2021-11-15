@@ -30,9 +30,9 @@ export class UiService {
         switch (true) {
           case hour >= 5 && hour < 12:
             return ['AM', 'Morning'];
-          case hour >= 12 && hour < 18:
+          case hour >= 12 && hour < 17:
             return ['AM', 'Afternoon'];
-          case hour >= 18 && hour < 22:
+          case hour >= 17 && hour < 22:
             return ['PM', 'Evening'];
           case hour >= 22 || hour < 5:
             return ['PM', 'Night'];

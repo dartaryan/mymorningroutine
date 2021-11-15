@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .main-card {
@@ -19,4 +20,5 @@
 
 .PM {
   background-color: #151843;
+  color: white;
 }

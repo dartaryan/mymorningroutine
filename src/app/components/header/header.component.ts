@@ -11,12 +11,13 @@ import { UiService } from 'src/app/services/ui.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  title: string = ' Morning Routine';
+  
   displayName = 'My';
   userPhoto = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
   user: User;
   dayPhrase: string;
   daySign: string;
+  title: string = ' Routine';
 
   dayInfo$ = this.uiService
     .getSignPhrase()
@@ -29,7 +30,7 @@ export class HeaderComponent {
   user$ = this.authService.getAuthState().pipe(
     tap((user) => {
       if (user) {
-        this.displayName = user.displayName.split(' ')[0] + "'s";
+        this.displayName = user.displayName.split(' ')[0] + "'s ";
         this.userPhoto = user.photoURL
           ? user.photoURL
           : 'https://cdn-icons-png.flaticon.com/512/169/169367.png';

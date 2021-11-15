@@ -1,7 +1,10 @@
+<div *ngIf="dayInfo$ | async"></div>
+
 <button
   mat-raised-button
-  style="color: white; background-color: black"
   (click)="logOut()"
+  [ngClass]="daySign === 'AM' ? 'AM' : 'PM'"
 >
   Logout
 </button>
+

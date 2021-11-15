@@ -1,0 +1,19 @@
+.AM {
+  width: 120%;
+  height: 120%;
+  background-color: lightblue;
+  position: fixed;
+  left: -50px;
+  top: -50px;
+  z-index: -2;
+}
+
+.PM {
+  width: 120%;
+  height: 120%;
+  background-color: #262847;
+  position: fixed;
+  left: -50px;
+  top: -50px;
+  z-index: -2;
+}

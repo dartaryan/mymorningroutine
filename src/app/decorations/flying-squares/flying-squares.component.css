@@ -2,13 +2,15 @@
 
 /* #####  AM  ##### */
 
+
 .AMcube {
   position: absolute;
   top: 80vh;
   left: 45vw;
   width: 10px;
   height: 10px;
-  border: solid 1px #daa516;
+
+  border: solid 1px #82c1d6c4;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   -webkit-animation: cube 12s ease-in forwards infinite;
@@ -16,7 +18,7 @@
   z-index: -2;
 }
 .AMcube:nth-child(2n) {
-  border-color: #f3c325;
+  border-color: #5dacc7d0;
 }
 .AMcube:nth-child(2) {
   -webkit-animation-delay: 2s;

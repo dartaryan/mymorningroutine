@@ -1,1 +1,3 @@
-<div *ngIf="dayInfo$ | async"></div>
+<div
+  *ngIf="dayInfo$ | async"
+  [ngClass]="daySign === 'AM' ? 'main-card AM' : 'main-card PM'"></div>
