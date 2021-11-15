@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { interval, mergeMap, Observable, of, Subject, tap } from 'rxjs';
+import { interval, map, mergeMap, Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,8 +7,7 @@ import { interval, mergeMap, Observable, of, Subject, tap } from 'rxjs';
 export class UiService {
   private showAddTask: boolean = false;
   private subject = new Subject<any>();
-  daysign: string;
-  hour: number;
+
   constructor() {}
 
   toggleAddTask(): void {
@@ -23,17 +22,25 @@ export class UiService {
   getTime(): Observable<Date> {
     return interval(1000).pipe(mergeMap(() => of(new Date())));
   }
-  getDaySign(): Observable<string> {
-    this.getTime().pipe(
-      tap((time) => {
-        this.daysign = time.toLocaleString('en-US').split(' ')[2];
-        this.hour = time.getHours();
+
+  getSignPhrase(): Observable<string[]> {
+    return this.getTime().pipe(
+      map((hours) => {
+        const hour = hours.getHours();
+        switch (true) {
+          case hour >= 5 && hour < 12:
+            return ['AM', 'Morning'];
+          case hour >= 12 && hour < 18:
+            return ['AM', 'Afternoon'];
+          case hour >= 18 && hour < 22:
+            return ['PM', 'Evening'];
+          case hour >= 22 || hour < 5:
+            return ['PM', 'Night'];
+          default:
+            break;
+        }
+        return ['', ''];
       })
     );
-    if (this.daysign === 'PM' && this.hour >= 18) {
-      return of('PM');
-    } else {
-      return of('AM');
-    }
   }
 }

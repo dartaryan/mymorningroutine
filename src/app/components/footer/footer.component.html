@@ -1,15 +1,7 @@
-<mat-card-footer>
-
-    
+<mat-card-footer>   
 </mat-card-footer>
-
 <footer>
 
-<app-button *ngIf="user$ | async"
-color="{{ showAddTask ? 'darkred' : 'green' }}"
-text="{{ showAddTask ? 'Close' : 'Add' }}"
-(btnClick)="toggleAddTask()"
-></app-button>
 
 <p>Copyright &copy; 2021 </p>
 <a routerLink="/about">About</a>

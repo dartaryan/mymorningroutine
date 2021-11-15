@@ -44,6 +44,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DayBgComponent } from './decorations/day-bg/day-bg.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -73,6 +75,7 @@ const appRoutes: Routes = [
     FlyingSquaresComponent,
     GoogleButtonComponent,
     FacebookButtonComponent,
+    DayBgComponent,
   ],
 
   imports: [
@@ -99,6 +102,7 @@ const appRoutes: Routes = [
     MatListModule,
     MatGridListModule,
     MatExpansionModule,
+    MatCheckboxModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

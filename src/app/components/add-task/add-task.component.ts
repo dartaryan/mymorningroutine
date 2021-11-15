@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { UiService } from 'src/app/services/ui.service';
+import { Timing } from 'src/app/Timing';
 import { Task } from '../../Task';
 
 @Component({
@@ -18,6 +19,19 @@ export class AddTaskComponent implements OnInit {
   showAddTask: boolean = false;
   subscription: Subscription;
   toggled: boolean = false;
+
+  timing: Timing = {
+    name: 'All-day',
+    completed: false,
+    subtimings: [
+      { name: 'Morning', completed: false, description: '6:00AM - 11:59AM' },
+      { name: 'Afternoon', completed: false, description: '12:00PM - 5:59PM' },
+      { name: 'Evening', completed: false, description: '6:00PM - 9:59PM' },
+      { name: 'Night', completed: false, description: '10:00PM - 5:59AM' },
+    ],
+  };
+
+  allComplete: boolean = false;
 
   constructor(private uiService: UiService, public authService: AuthService) {
     this.subscription = this.uiService
@@ -55,5 +69,28 @@ export class AddTaskComponent implements OnInit {
     this.icon = '☀️';
     this.done = false;
     this.step = 1;
+  }
+  updateAllComplete() {
+    this.allComplete =
+      this.timing.subtimings != null &&
+      this.timing.subtimings.every((t) => t.completed);
+  }
+
+  someComplete(): boolean {
+    if (this.timing.subtimings == null) {
+      return false;
+    }
+    return (
+      this.timing.subtimings.filter((t) => t.completed).length > 0 &&
+      !this.allComplete
+    );
+  }
+
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.timing.subtimings == null) {
+      return;
+    }
+    this.timing.subtimings.forEach((t) => (t.completed = completed));
   }
 }

@@ -1,46 +1,9 @@
-<!-- <div class="row" *ngIf="showAddTask">
-  <div class="current-icon">
-    <app-emoji-picker (chosenEmoj)="onChosenEmoj($event)"></app-emoji-picker>
-  </div>
-  <div class="form-fields">
-    <form class="add-form" (ngSubmit)="onSubmit()">
-      <div class="form-rows">
-        <div class="form-control column left">
-          <input
-            class="form-input"
-            type="number"
-            name="step"
-            [(ngModel)]="step"
-            id="step"
-            value=""
-            placeholder="#"
-            autocomplete="off"
-          />
-        </div>
-        <div class="form-control column right">
-          <input
-            class="form-input"
-            type="text"
-            name="text"
-            [(ngModel)]="text"
-            id="text"
-            placeholder="Choose a task name"
-            autocomplete="off"
-          />
-        </div>
-      </div>
-
-      <input type="submit" value="Save Task" class="btn-block" />
-    </form>
-  </div>
-</div> -->
-
 <mat-expansion-panel class="add-card">
   <mat-expansion-panel-header>
     <mat-panel-title>New Task...</mat-panel-title>
   </mat-expansion-panel-header>
   <form (ngSubmit)="onSubmit()">
-    <mat-grid-list class="form-content" cols="6">
+    <mat-grid-list class="form-content" cols="6" rows="5">
       <mat-grid-tile colspan="1" rowspan="1">
         <input
           class="form-input"
@@ -66,51 +29,42 @@
         />
       </mat-grid-tile>
 
-      <mat-grid-tile class="current-icon" colspan="1" rowspan="1">
+      <mat-grid-tile class="current-icon" colspan="3" rowspan="3">
         <app-emoji-picker
           (chosenEmoj)="onChosenEmoj($event)"
         ></app-emoji-picker>
       </mat-grid-tile>
+<!-- 
+      <mat-grid-tile colspan="3" rowspan="3">
+        <section class="checkbox-section">
+          <span class="checkbox-list-section">
+            <mat-checkbox
+            
+              class="checkbox-margin"
+              [checked]="allComplete"
+              [indeterminate]="someComplete()"
+              (change)="setAll($event.checked)"
+            >
+              {{ timing.name }}
+            </mat-checkbox>
+          </span>
+          <span class="checkbox-list-section">
+            <ul>
+              <li *ngFor="let subtiming of timing.subtimings">
+                <mat-checkbox
+                  [(ngModel)]="subtiming.completed"
+                  (ngModelChange)="updateAllComplete()"
+                >
+                  {{ subtiming.name }}
+                </mat-checkbox>
+              </li>
+            </ul>
+          </span>
+        </section>
+      </mat-grid-tile> -->
     </mat-grid-list>
     <mat-action-row>
       <input type="submit" value="Save Task" class="save-btn" />
     </mat-action-row>
   </form>
 </mat-expansion-panel>
-
-<!-- <div class="row" *ngIf="showAddTask">
-  <div class="current-icon">
-    <app-emoji-picker (chosenEmoj)="onChosenEmoj($event)"></app-emoji-picker>
-  </div>
-  <div class="form-fields">
-    <form class="add-form" (ngSubmit)="onSubmit()">
-      <div class="form-rows">
-        <div class="form-control column left">
-          <input
-            class="form-input"
-            type="number"
-            name="step"
-            [(ngModel)]="step"
-            id="step"
-            value=""
-            placeholder="#"
-            autocomplete="off"
-          />
-        </div>
-        <div class="form-control column right">
-          <input
-            class="form-input"
-            type="text"
-            name="text"
-            [(ngModel)]="text"
-            id="text"
-            placeholder="Choose a task name"
-            autocomplete="off"
-          />
-        </div>
-      </div>
-
-      <input type="submit" value="Save Task" class="btn-block" />
-    </form>
-  </div>
-</div> -->

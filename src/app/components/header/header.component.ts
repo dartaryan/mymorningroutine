@@ -1,12 +1,6 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { User } from '@angular/fire/auth';
-import { Observable, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { UiService } from 'src/app/services/ui.service';
 
@@ -21,20 +15,16 @@ export class HeaderComponent {
   displayName = 'My';
   userPhoto = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
   user: User;
-  dayLight: string;
-  time$ = this.uiService.getTime();
+  dayPhrase: string;
+  daySign: string;
 
-  dayMode$ = this.uiService.getTime().pipe(
-    tap((time) => {
-      const daysign = time.toLocaleString('en-US').split(' ')[2];
-      const hour = time.getHours();
-      if (daysign === 'PM' && hour >= 18) {
-        this.dayLight = 'PM';
-      } else {
-        this.dayLight = 'AM';
-      }
-    })
-  );
+  dayInfo$ = this.uiService
+    .getSignPhrase()
+    .pipe(
+      tap((info) => ((this.daySign = info[0]), (this.dayPhrase = info[1])))
+    );
+
+  time$ = this.uiService.getTime();
 
   user$ = this.authService.getAuthState().pipe(
     tap((user) => {

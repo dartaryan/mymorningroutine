@@ -1,9 +1,13 @@
+<div *ngIf="dayInfo$ | async"></div>
+
+<app-day-bg></app-day-bg>
+
 <app-flying-squares></app-flying-squares>
 
-<mat-card class="main-card">
+<mat-card [ngClass]="daySign === 'AM' ? 'main-card AM' : 'main-card PM'">
   <app-header></app-header>
 
   <router-outlet></router-outlet>
 
   <app-footer></app-footer>
-
+</mat-card>

@@ -1,45 +1,97 @@
 
-.cube {
+
+/* #####  AM  ##### */
+
+.AMcube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #daa516;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cube 12s ease-in forwards infinite;
+  animation: cube 12s ease-in forwards infinite;
+  z-index: -2;
+}
+.AMcube:nth-child(2n) {
+  border-color: #f3c325;
+}
+.AMcube:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.AMcube:nth-child(3) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.AMcube:nth-child(4) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.AMcube:nth-child(5) {
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.AMcube:nth-child(6) {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+/* #####  PM  ##### */
+
+.PMcube {
     position: absolute;
     top: 80vh;
     left: 45vw;
     width: 10px;
     height: 10px;
-    border: solid 1px #daa516;
+    border: solid 1px #1e2261;
     transform-origin: top left;
     transform: scale(0) rotate(0deg) translate(-50%, -50%);
     -webkit-animation: cube 12s ease-in forwards infinite;
     animation: cube 12s ease-in forwards infinite;
     z-index: -2;
   }
-  .cube:nth-child(2n) {
-    border-color: #f3c325;
+  .PMcube:nth-child(2n) {
+    border-color: #151843;
   }
-  .cube:nth-child(2) {
+  .PMcube:nth-child(2) {
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     left: 25vw;
     top: 40vh;
   }
-  .cube:nth-child(3) {
+  .PMcube:nth-child(3) {
     -webkit-animation-delay: 4s;
     animation-delay: 4s;
     left: 75vw;
     top: 50vh;
   }
-  .cube:nth-child(4) {
+  .PMcube:nth-child(4) {
     -webkit-animation-delay: 6s;
     animation-delay: 6s;
     left: 90vw;
     top: 10vh;
   }
-  .cube:nth-child(5) {
+  .PMcube:nth-child(5) {
     -webkit-animation-delay: 8s;
     animation-delay: 8s;
     left: 10vw;
     top: 85vh;
   }
-  .cube:nth-child(6) {
+  .PMcube:nth-child(6) {
     -webkit-animation-delay: 10s;
     animation-delay: 10s;
     left: 50vw;

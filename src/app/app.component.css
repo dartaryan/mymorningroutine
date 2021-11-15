@@ -7,9 +7,16 @@
 }
 
 .main-card {
-  background-color: #ffd54d;
   max-width: 500px;
   min-height: 300px;
   margin: auto;
   padding: 1em;
+}
+
+.AM {
+  background-color: #ffd54d;
+}
+
+.PM {
+  background-color: #151843;
 }

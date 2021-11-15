@@ -1,6 +1,7 @@
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
-<div class="cube"></div>
+<div *ngIf="dayInfo$ | async"></div>
+<div [ngClass]="daySign === 'AM' ? 'AMcube' : 'PMcube'"></div>
+<div [ngClass]="daySign === 'AM' ? 'AMcube' : 'PMcube'"></div>
+<div [ngClass]="daySign === 'AM' ? 'AMcube' : 'PMcube'"></div>
+<div [ngClass]="daySign === 'AM' ? 'AMcube' : 'PMcube'"></div>
+<div [ngClass]="daySign === 'AM' ? 'AMcube' : 'PMcube'"></div>
+<div [ngClass]="daySign === 'AM' ? 'AMcube' : 'PMcube'"></div>

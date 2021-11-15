@@ -13,6 +13,9 @@ export class FooterComponent {
   subscription: Subscription;
 
   user$ = this.authService.getAuthState();
+
+
+
   constructor(private uiService: UiService, private authService: AuthService) {
     this.subscription = this.uiService
       .onToggle()

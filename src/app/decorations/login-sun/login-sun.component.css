@@ -1,21 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
-/* body {
+body {
   margin: 0 auto;
   background-color: #151843;
   overflow: hidden;
-} */
+}
 
-/* #wrapper { */
-  /* max-width: 500px;
+#wrapper {
+  max-width: 500px;
   height: 400px;
   margin: 0 auto;
   position: relative;
   margin-top: calc(50vh - 200px);
-} */
-
-*{
-  box-sizing: border-box;
 }
 
 .planet {
@@ -451,10 +447,13 @@
   width: 75px;
 }
 
+.day {
+}
+
 #nightbg {
   background-color: lightblue;
-  width: 100px;
-  height: 100px;
+  /* width: 100px;
+  height: 100px; */
   position: absolute;
   top: 100px;
   left: calc(50% - 50px);
@@ -502,6 +501,9 @@
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   opacity: 1;
+}
+
+.day .zzz1 {
 }
 
 .day .zzz2 {
