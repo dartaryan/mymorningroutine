@@ -3,10 +3,10 @@
   class="task"
   (dblclick)="onToggle(task)"
 >
-  <mat-grid-list cols="15" rowHeight="5em">
+  <mat-grid-list cols="15" rowHeight="5rem">
     <mat-grid-tile
       class="task-step"
-      style="border-right: 2px solid rgba(87, 87, 87, 0.699)"
+      style="border-right: 0.2rem solid rgba(87, 87, 87, 0.699)"
       colspan="2"
       rowspan="1"
       ><h2>{{ task.step }}</h2>
@@ -15,7 +15,7 @@
       ><h1>{{ task.icon }}</h1></mat-grid-tile
     >
     <mat-grid-tile class="task-text" colspan="10" rowspan="1"
-      ><h1>{{ task.text }}</h1></mat-grid-tile
+      ><h2>{{ task.text }}</h2></mat-grid-tile
     >
     <mat-grid-tile class="task-delete" colspan="1" rowspan="1">
       <h2>

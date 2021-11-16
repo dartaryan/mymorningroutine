@@ -1,6 +1,6 @@
 .task {
   background: rgba(255, 255, 255, 0.521);
-  margin: 5px;
+  margin: 0.5rem;
   cursor: pointer;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -14,40 +14,48 @@
 }
 
 .task.done {
-  border-left: 5px solid green;
+  border-left: 0.5rem solid green;
   background-color: rgba(13, 199, 13, 0.575);
 }
 
 .task.done:hover {
-  border-left: 5px solid green;
+  border-left: 0.5rem solid green;
   background-color: rgba(25, 128, 25, 0.342);
   transition: 0.5s ease-in-out;
 }
 
 mat-card {
-  padding: 5px;
+  padding: 0.5rem;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
 }
 
 .task-step h2,
 .task-icon h1,
-.task-text h1,
+.task-text h2,
 .task-delete h2 {
-  align-items: center;
+  align-items: baseline;
   align-content: center;
   text-align: center;
-  margin: 0;
+  margin: 0.5rem;
 }
 
 .task-icon h1 {
-  padding-left: 15px;
+  padding-left: 1.5rem;
 }
 
-.task-text h1 {
-  font-weight: 500;
+.task-text h2 {
+  font-size: 2.8rem;
 }
 
 .task-delete h1 {
-  padding-right: 5px;
+  padding-right: 0.5rem;
 }
 
 .task-step h1 {
