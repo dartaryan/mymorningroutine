@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-login-greeting',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginGreetingComponent implements OnInit {
 
-  constructor() { }
+  dayPhrase: string = '';
+
+  dayInfo$ = this.uiService
+    .getSignPhrase()
+    .pipe(tap((info) => (this.dayPhrase = info[1])));
+
+  constructor(private uiService: UiService) {}
 
   ngOnInit(): void {
   }

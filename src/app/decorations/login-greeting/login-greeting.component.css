@@ -1,41 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
 
-html,
-body {
-  height: 100%;
-}
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-  text-align: center;
-  background: beige;
-  overflow: hidden;
-}
-
 h1 {
-  font: bold calc(1rem + 2vw) "Signika", sans-serif;
+  font: bold 6rem "Signika", sans-serif;
   user-select: none;
-  position: absolute;
-  top: 40%;
-  left: 15%;
 }
 
 h1 span {
   display: inline-block;
   animation: float 0.9s ease-in-out infinite;
 }
+
 @keyframes float {
   0%,
   100% {
     transform: none;
   }
   33% {
-    transform: translateY(-1px) rotate(-2deg);
+    transform: translateY(-0.1rem) rotate(-2deg);
   }
   66% {
-    transform: translateY(1px) rotate(2deg);
+    transform: translateY(0.1rem) rotate(2deg);
   }
 }
 h1:hover span {
@@ -48,33 +32,56 @@ h1:hover span {
     transform: translate(0);
   }
   25% {
-    transform: rotateX(20deg) translateY(2px) rotate(-3deg);
+    transform: rotateX(20deg) translateY(0.2rem) rotate(-3deg);
   }
   50% {
-    transform: translateY(-20px) rotate(3deg) scale(1.1);
+    transform: translateY(-2rem) rotate(3deg) scale(1.1);
   }
 }
 
-span:nth-child(4n) {
-  color: hsl(50, 75%, 55%);
-  text-shadow: 1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%),
-    3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%);
+.Night span:nth-child(4n) {
+  color: #d8e8fe;
+  text-shadow: 0.1rem 0.1rem #b4d3fd, 0.2rem 0.2rem #b4d3fd,
+    0.3rem 0.3rem #b4d3fd, 0.4rem 0.4rem #b4d3fd;
 }
-span:nth-child(4n-1) {
-  color: hsl(135, 35%, 55%);
-  text-shadow: 1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%),
-    3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%);
+.Night span:nth-child(4n-1) {
+  color: #c1c9e6;
+  text-shadow: 0.1rem 0.1rem #9da9d8, 0.2rem 0.2rem #9da9d8,
+    0.3rem 0.3rem #9da9d8, 0.4rem 0.4rem #9da9d8;
 }
-span:nth-child(4n-2) {
-  color: hsl(155, 35%, 60%);
-  text-shadow: 1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%),
-    3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%);
+.Night span:nth-child(4n-2) {
+  color: #afaacb;
+  text-shadow: 0.1rem 0.1rem #918ab7, 0.2rem 0.2rem #918ab7,
+    0.3rem 0.3rem #918ab7, 0.4rem 0.4rem #918ab7;
 }
-span:nth-child(4n-3) {
-  color: hsl(30, 65%, 60%);
-  text-shadow: 1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%),
-    3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%);
+.Night span:nth-child(4n-3) {
+  color: #cadaf0;
+  text-shadow: 0.1rem 0.1rem #a4bfe5, 0.2rem 0.2rem #a4bfe5,
+    0.3rem 0.3rem #a4bfe5, 0.4rem 0.4rem #a4bfe5;
 }
+
+.Morning span:nth-child(4n) {
+  color: #2b67bb;
+  text-shadow: 0.1rem 0.1rem #b4d3fd, 0.2rem 0.2rem #b4d3fd,
+    0.3rem 0.3rem #b4d3fd, 0.4rem 0.4rem #b4d3fd;
+}
+.Morning span:nth-child(4n-1) {
+  color: #c1c9e6;
+  text-shadow: 0.1rem 0.1rem #9da9d8, 0.2rem 0.2rem #9da9d8,
+    0.3rem 0.3rem #9da9d8, 0.4rem 0.4rem #9da9d8;
+}
+.Morning span:nth-child(4n-2) {
+  color: #afaacb;
+  text-shadow: 0.1rem 0.1rem #918ab7, 0.2rem 0.2rem #918ab7,
+    0.3rem 0.3rem #918ab7, 0.4rem 0.4rem #918ab7;
+}
+.Morning span:nth-child(4n-3) {
+  color: #cadaf0;
+  text-shadow: 0.1rem 0.1rem #a4bfe5, 0.2rem 0.2rem #a4bfe5,
+    0.3rem 0.3rem #a4bfe5, 0.4rem 0.4rem #a4bfe5;
+}
+
+
 
 h1 span:nth-child(2) {
   animation-delay: 0.05s;

@@ -4,7 +4,7 @@
 
 
 .AMcube {
-  position: absolute;
+  position: fixed;
   top: 80vh;
   left: 45vw;
   width: 10px;
@@ -54,7 +54,7 @@
 /* #####  PM  ##### */
 
 .PMcube {
-    position: absolute;
+    position: fixed;
     top: 80vh;
     left: 45vw;
     width: 10px;
