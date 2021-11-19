@@ -1,10 +1,10 @@
 .AM {
   width: 120%;
   height: 120%;
-  background-color: lightblue;
+  background-color: rgb(133, 186, 204);
   position: fixed;
-  left: -50px;
-  top: -50px;
+  left: -5rem;
+  top: -5rem;
   z-index: -2;
 }
 
@@ -13,7 +13,7 @@
   height: 120%;
   background-color: #262847;
   position: fixed;
-  left: -50px;
-  top: -50px;
+  left: -5rem;
+  top: -5rem;
   z-index: -2;
 }

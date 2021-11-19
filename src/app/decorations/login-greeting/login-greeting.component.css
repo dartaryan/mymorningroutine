@@ -61,24 +61,24 @@ h1:hover span {
 }
 
 .Morning span:nth-child(4n) {
-  color: #2b67bb;
-  text-shadow: 0.1rem 0.1rem #b4d3fd, 0.2rem 0.2rem #b4d3fd,
-    0.3rem 0.3rem #b4d3fd, 0.4rem 0.4rem #b4d3fd;
+  color: #ffd201;
+  text-shadow: 0.1rem 0.1rem #cca700, 0.2rem 0.2rem #cca700,
+    0.3rem 0.3rem #cca700, 0.4rem 0.4rem #cca700;
 }
 .Morning span:nth-child(4n-1) {
-  color: #c1c9e6;
-  text-shadow: 0.1rem 0.1rem #9da9d8, 0.2rem 0.2rem #9da9d8,
-    0.3rem 0.3rem #9da9d8, 0.4rem 0.4rem #9da9d8;
+  color: #eed04d;
+  text-shadow: 0.1rem 0.1rem #c4a312, 0.2rem 0.2rem #c4a312,
+    0.3rem 0.3rem #c4a312, 0.4rem 0.4rem #c4a312;
 }
 .Morning span:nth-child(4n-2) {
-  color: #afaacb;
-  text-shadow: 0.1rem 0.1rem #918ab7, 0.2rem 0.2rem #918ab7,
-    0.3rem 0.3rem #918ab7, 0.4rem 0.4rem #918ab7;
+  color: #FFC750;
+  text-shadow: 0.1rem 0.1rem #eba000, 0.2rem 0.2rem #eba000,
+    0.3rem 0.3rem #eba000, 0.4rem 0.4rem #eba000;
 }
 .Morning span:nth-child(4n-3) {
-  color: #cadaf0;
-  text-shadow: 0.1rem 0.1rem #a4bfe5, 0.2rem 0.2rem #a4bfe5,
-    0.3rem 0.3rem #a4bfe5, 0.4rem 0.4rem #a4bfe5;
+  color: #ffd55e;
+  text-shadow: 0.1rem 0.1rem #c28e00, 0.2rem 0.2rem #c28e00,
+    0.3rem 0.3rem #c28e00, 0.4rem 0.4rem #c28e00;
 }
 
 
