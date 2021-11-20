@@ -11,7 +11,6 @@ import { UiService } from 'src/app/services/ui.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  
   displayName = 'My';
   userPhoto = 'https://cdn-icons-png.flaticon.com/512/169/169367.png';
   user: User;
@@ -30,7 +29,12 @@ export class HeaderComponent {
   user$ = this.authService.getAuthState().pipe(
     tap((user) => {
       if (user) {
-        this.displayName = user.displayName.split(' ')[0] + "'s ";
+        if (user.displayName === null) {
+          this.displayName = 'My ';
+        } else {
+          this.displayName = user.displayName.split(' ')[0] + "'s ";
+        }
+
         this.userPhoto = user.photoURL
           ? user.photoURL
           : 'https://cdn-icons-png.flaticon.com/512/169/169367.png';

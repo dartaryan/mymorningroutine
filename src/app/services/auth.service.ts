@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   authState,
   FacebookAuthProvider,
+  GithubAuthProvider,
 } from '@angular/fire/auth';
 import 'firebase/auth';
 import { User } from '../User';
@@ -27,9 +28,7 @@ export class AuthService {
     public firestore: Firestore,
     public router: Router,
     public ngZone: NgZone
-  ) {
-
-  }
+  ) {}
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -37,19 +36,24 @@ export class AuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin('g');
+    return this.AuthLogin(new GoogleAuthProvider());
   }
 
   FacebookAuth() {
+    return this.AuthLogin(new FacebookAuthProvider());
+  }
+  MicrosoftAuth() {
     return this.AuthLogin('fb');
   }
+  GithubAuth() {
+    return this.AuthLogin(new GithubAuthProvider());
+  }
 
-  async AuthLogin(provider: string) {
-    const currentProvider =
-      provider == 'g' ? new GoogleAuthProvider() : new FacebookAuthProvider();
+  async AuthLogin(currentProvider: any) {
     try {
       const result = await signInWithPopup(this.fireAuth, currentProvider);
-
+      console.log("-----------------result: ",result)
+      console.log("-----------------result.user: ",result.user)
       this.SetUserData(result.user);
     } catch (error) {
       window.alert(error);
@@ -60,7 +64,7 @@ export class AuthService {
     const userData = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
+      displayName: user.displayName || user.screenName,
       photoURL: user.photoURL,
     };
 
@@ -94,3 +98,6 @@ export class AuthService {
     );
   }
 }
+
+
+

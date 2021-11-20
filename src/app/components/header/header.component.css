@@ -1,11 +1,32 @@
-.card-container {
+header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
 }
 
-.mat-card-header {
+.mat-card-header.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    margin-bottom: 2rem;
+}
+
+.mat-card-avatar {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 20%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+ .mat-card-header {
   display: flex;
   justify-content: center;
+}
+
+.mat-card-subtitle{
+  margin: 0px;
 }
 
 ::ng-deep .mat-card-header-text {

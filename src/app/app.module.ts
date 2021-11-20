@@ -46,6 +46,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DayBgComponent } from './decorations/day-bg/day-bg.component';
+import { MicrosoftButtonComponent } from './components/buttons/microsoft-button/microsoft-button.component';
+import { GithubButtonComponent } from './components/buttons/github-button/github-button.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -76,6 +78,8 @@ const appRoutes: Routes = [
     GoogleButtonComponent,
     FacebookButtonComponent,
     DayBgComponent,
+    MicrosoftButtonComponent,
+    GithubButtonComponent,
   ],
 
   imports: [

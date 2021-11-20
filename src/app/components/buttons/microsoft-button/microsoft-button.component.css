@@ -83,9 +83,9 @@ body {
   text-shadow: 0rem -0.1rem 0rem rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .google:hover,
-.wrapper .google:hover .tooltip,
-.wrapper .google:hover .tooltip::before {
-  background-color: #de463b;
+.wrapper .microsoft:hover,
+.wrapper .microsoft:hover .tooltip,
+.wrapper .microsoft:hover .tooltip::before {
+  background-color: #ffba01;
   color: #ffffff;
 }
