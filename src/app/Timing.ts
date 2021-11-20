@@ -1,6 +1,5 @@
 export interface Timing {
   name: string;
-  completed: boolean;
+  show: boolean;
   description?: string;
-  subtimings?: Timing[];
 }
