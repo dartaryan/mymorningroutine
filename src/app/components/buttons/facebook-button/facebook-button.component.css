@@ -32,9 +32,9 @@ body {
   border-radius: 50%;
   padding: 1.5rem;
   margin: 1rem;
-  width: 5rem;
-  height: 5rem;
-  font-size: 1.8rem;
+  width: 7rem;
+  height: 7rem;
+  font-size: 2.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +48,7 @@ body {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   background-color: #ffffff;
   color: #ffffff;
   padding: 0.5rem 0.8rem;

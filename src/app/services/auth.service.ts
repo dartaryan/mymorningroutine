@@ -10,7 +10,7 @@ import {
 import 'firebase/auth';
 import { User } from '../User';
 import { Router } from '@angular/router';
-import { addDoc, collection, Firestore, setDoc } from '@angular/fire/firestore';
+import { Firestore } from '@angular/fire/firestore';
 import { tap } from 'rxjs';
 
 @Injectable({
@@ -42,18 +42,19 @@ export class AuthService {
   FacebookAuth() {
     return this.AuthLogin(new FacebookAuthProvider());
   }
-  MicrosoftAuth() {
-    return this.AuthLogin('fb');
-  }
+
   GithubAuth() {
     return this.AuthLogin(new GithubAuthProvider());
+  }
+
+  MicrosoftAuth() {
+    return this.AuthLogin('m');
   }
 
   async AuthLogin(currentProvider: any) {
     try {
       const result = await signInWithPopup(this.fireAuth, currentProvider);
-      console.log("-----------------result: ",result)
-      console.log("-----------------result.user: ",result.user)
+
       this.SetUserData(result.user);
     } catch (error) {
       window.alert(error);
@@ -64,17 +65,12 @@ export class AuthService {
     const userData = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName || user.screenName,
+      displayName: user.displayName,
       photoURL: user.photoURL,
     };
 
     try {
       console.log(user);
-      // const docRef = await addDoc(
-      //   collection(this.firestore, 'users'),
-      //   userData
-      // );
-      // setDoc(docRef, { merge: true });
       this.router.navigate(['/tasks']);
     } catch (error) {
       console.error('Error adding document: ', error);
@@ -98,6 +94,3 @@ export class AuthService {
     );
   }
 }
-
-
-

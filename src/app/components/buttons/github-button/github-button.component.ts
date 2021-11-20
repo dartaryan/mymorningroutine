@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-github-button',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./github-button.component.css']
 })
 export class GithubButtonComponent implements OnInit {
+  faGithub = faGithub;
+  constructor(private authService: AuthService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-}
+  loginGithub() {
+    this.authService.GithubAuth();
+  }}

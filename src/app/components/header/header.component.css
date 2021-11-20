@@ -26,9 +26,9 @@ header {
 }
 
 .mat-card-subtitle{
-  margin: 0px;
+  margin: 0rem;
 }
 
 ::ng-deep .mat-card-header-text {
-  margin: 0px;
+  margin: 0rem;
 }
