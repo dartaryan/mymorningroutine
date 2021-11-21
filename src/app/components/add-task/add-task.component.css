@@ -1,6 +1,18 @@
 /* mat-panel-title {
  font-size:2rem;
 } */
+.subtiming-name {
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+.subtiming-description {
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
 
 .add-card {
   background: rgba(224, 224, 224, 0.521);
@@ -27,17 +39,41 @@
   margin: 0.5rem;
 }
 
-.checkbox-section {
-  margin: 1.2rem 0;
-}
-
-.checkbox-margin {
-  margin: 0 1.2rem;
-}
-
 ul {
   list-style-type: none;
-  margin-top: 0.4rem;
+  padding: 0;
+}
+li {
+  min-height: 4rem;
+}
+
+mat-checkbox ::ng-deep .mat-checkbox-inner-container {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+::ng-deep .mat-tooltip.Morning {
+  background-color: #fce100 !important;
+  color: black !important;
+  font-size: 2rem !important;
+}
+
+::ng-deep .mat-tooltip.Afternoon {
+  background-color: #ffb900 !important;
+  color: black !important;
+  font-size: 2rem !important;
+}
+::ng-deep .mat-tooltip.Evening {
+  background-color: #333666 !important;
+  color: white !important;
+  font-size: 2rem !important;
+}
+
+::ng-deep .mat-tooltip.Night {
+  background-color: #1c1e36 !important;
+  color: white !important;
+  font-size: 2rem !important;
 }
 
 .current-emoji {
@@ -61,7 +97,6 @@ ul {
   border-radius: 0.55rem;
   cursor: pointer;
   text-decoration: none;
-  /* font-size: 1.5rem; */
   font-family: inherit;
 }
 

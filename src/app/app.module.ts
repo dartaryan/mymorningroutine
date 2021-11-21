@@ -48,6 +48,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DayBgComponent } from './decorations/day-bg/day-bg.component';
 import { MicrosoftButtonComponent } from './components/buttons/microsoft-button/microsoft-button.component';
 import { GithubButtonComponent } from './components/buttons/github-button/github-button.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { EmojiMartComponent } from './components/emoji-mart/emoji-mart.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -80,6 +83,7 @@ const appRoutes: Routes = [
     DayBgComponent,
     MicrosoftButtonComponent,
     GithubButtonComponent,
+    EmojiMartComponent,
   ],
 
   imports: [
@@ -90,6 +94,7 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     NgxEmojiPickerModule.forRoot(),
+    PickerModule,
 
     SocialLoginModule,
     provideAuth(() => getAuth()),
@@ -107,6 +112,7 @@ const appRoutes: Routes = [
     MatGridListModule,
     MatExpansionModule,
     MatCheckboxModule,
+    MatTooltipModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

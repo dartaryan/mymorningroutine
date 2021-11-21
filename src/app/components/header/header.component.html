@@ -1,8 +1,10 @@
 <div class="content"></div>
 
 <mat-card-header class="card-container" *ngIf="user$ | async; else elseBlock">
-  <mat-card-title>{{ displayName }}{{ dayPhrase }}{{ title }}</mat-card-title>
-  <mat-card-subtitle style="color: azure">{{
+  <mat-card-title class="title"
+    >{{ displayName }}{{ dayPhrase }}{{ title }}</mat-card-title
+  >
+  <mat-card-subtitle style="color: azure; font-size: 2rem">{{
     time$ | async | date: "HH:mm:ss"
   }}</mat-card-subtitle>
   <img src="{{ userPhoto }}" mat-card-avatar />

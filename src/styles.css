@@ -1,6 +1,8 @@
+@import "~@ctrl/ngx-emoji-mart/picker";
+
 html {
   font-family: "Assistant", sans-serif;
-  overflow: hidden;
+  overflow: auto;
   background-color: lightcyan;
 }
 
@@ -40,7 +42,7 @@ html {
   }
 }
 /* Desktops and laptops ----------- */
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1025px) {
   /* Styles */
   html {
     font-size: 62.5%;

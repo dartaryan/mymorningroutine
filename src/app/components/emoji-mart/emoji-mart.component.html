@@ -1,0 +1,19 @@
+<button *ngIf="!toggled" class="emoji-btn" (click)="toggleEmojiPicker()">
+  {{ icon }}
+</button>
+<div *ngIf="dayInfo$ | async"></div>
+<div class="emoji-card">
+  <emoji-mart
+    style="border: none; background-color: 'transparent'"
+    class="emoji-mart"
+    [set]="set"
+    *ngIf="toggled"
+    (emojiSelect)="handleEmoji($event)"
+    title="Pick your emoji…"
+    [sheetSize]="20"
+    [emojiSize]="emojiSize"
+    [showPreview]="false"
+    [darkMode]="theme"
+    [perLine]="perLine"
+  ></emoji-mart>
+</div>

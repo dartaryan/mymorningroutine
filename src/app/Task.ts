@@ -5,4 +5,8 @@ export interface Task {
   step: number;
   done: boolean;
   uid: string;
+  morning: boolean;
+  afternoon: boolean;
+  evening: boolean;
+  night: boolean;
 }
