@@ -51,6 +51,9 @@ import { GithubButtonComponent } from './components/buttons/github-button/github
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { EmojiMartComponent } from './components/emoji-mart/emoji-mart.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { TaskTimingPipe } from './pipes/task-timing.pipe';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -84,6 +87,7 @@ const appRoutes: Routes = [
     MicrosoftButtonComponent,
     GithubButtonComponent,
     EmojiMartComponent,
+    TaskTimingPipe,
   ],
 
   imports: [
@@ -113,9 +117,11 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatCheckboxModule,
     MatTooltipModule,
+    MatTabsModule,
+    MatIconModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
-  exports: [OrderByPipe, UserTasksPipe],
+  exports: [OrderByPipe, UserTasksPipe,TaskTimingPipe],
 })
 export class AppModule {}

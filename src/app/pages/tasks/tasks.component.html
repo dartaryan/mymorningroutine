@@ -1,14 +1,79 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
-
-<div class="row" *ngIf="authService.currentUser as user">
-  <ng-container *ngIf="tasks$ | async as tasks">
-    <app-task-item
-      *ngFor="
-        let task of tasks | orderBy | userTasks: authService.currentUser.uid
-      "
-      [task]="task"
-      (onDeleteTask)="deleteTask(task)"
-      (onToggledone)="toggledone(task)"
-    ></app-task-item>
-  </ng-container>
-</div>
+<mat-tab-group mat-strech-tabs>
+  <mat-tab isActive:flase
+    ><ng-template mat-tab-label
+      ><fa-icon [icon]="faSun"></fa-icon>&nbsp;Morning</ng-template
+    >
+    <div class="row" *ngIf="authService.currentUser as user">
+      <ng-container *ngIf="tasks$ | async as tasks">
+        <app-task-item
+          *ngFor="
+            let task of tasks
+              | taskTiming: morning
+              | orderBy
+              | userTasks: authService.currentUser.uid
+          "
+          [task]="task"
+          (onDeleteTask)="deleteTask(task)"
+          (onToggledone)="toggledone(task)"
+        ></app-task-item>
+      </ng-container></div
+  ></mat-tab>
+  <mat-tab
+    ><ng-template mat-tab-label
+      ><fa-icon [icon]="faCloudSun"></fa-icon>&nbsp;Afternoon</ng-template
+    >
+    <div class="row" *ngIf="authService.currentUser as user">
+      <ng-container *ngIf="tasks$ | async as tasks">
+        <app-task-item
+          *ngFor="
+            let task of tasks
+              | taskTiming: afternoon
+              | orderBy
+              | userTasks: authService.currentUser.uid
+          "
+          [task]="task"
+          (onDeleteTask)="deleteTask(task)"
+          (onToggledone)="toggledone(task)"
+        ></app-task-item>
+      </ng-container></div
+  ></mat-tab>
+  <mat-tab
+    ><ng-template mat-tab-label
+      ><fa-icon [icon]="faCloudMoon"></fa-icon>&nbsp;Evening</ng-template
+    >
+    <div class="row" *ngIf="authService.currentUser as user">
+      <ng-container *ngIf="tasks$ | async as tasks">
+        <app-task-item
+          *ngFor="
+            let task of tasks
+              | taskTiming: evening
+              | orderBy
+              | userTasks: authService.currentUser.uid
+          "
+          [task]="task"
+          (onDeleteTask)="deleteTask(task)"
+          (onToggledone)="toggledone(task)"
+        ></app-task-item>
+      </ng-container></div
+  ></mat-tab>
+  <mat-tab
+    ><ng-template mat-tab-label
+      ><fa-icon [icon]="faMoon"></fa-icon>&nbsp;Night</ng-template
+    >
+    <div class="row" *ngIf="authService.currentUser as user">
+      <ng-container *ngIf="tasks$ | async as tasks">
+        <app-task-item
+          *ngFor="
+            let task of tasks
+              | orderBy
+              | userTasks: authService.currentUser.uid
+              | taskTiming: night
+          "
+          [task]="task"
+          (onDeleteTask)="deleteTask(task)"
+          (onToggledone)="toggledone(task)"
+        ></app-task-item>
+      </ng-container></div
+  ></mat-tab>
+</mat-tab-group>

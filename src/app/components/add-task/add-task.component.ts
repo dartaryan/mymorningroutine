@@ -32,6 +32,10 @@ export class AddTaskComponent {
     medium: [7, 25, 8],
     large: [12, 25, 5],
   };
+  Morning: boolean = false;
+  Afternoon: boolean = true;
+  Evening: boolean = false;
+  Night: boolean = false;
   // size: [perLine,emojiSize,rowspan]
 
   subtimings: Timing[] = [
@@ -90,17 +94,22 @@ export class AddTaskComponent {
       step: this.step,
       id: '',
       uid: this.authService.currentUser.uid,
-      morning: this.subtimings[0]["show"],
-      afternoon: this.subtimings[1]["show"],
-      evening: this.subtimings[2]["show"],
-      night: this.subtimings[3]["show"],
+      morning: this.subtimings[0].show,
+      afternoon: this.subtimings[1].show,
+      evening: this.subtimings[2].show,
+      night: this.subtimings[3].show,
     };
-    console.log(newTask)
+    console.log(this.subtimings);
+    console.log(newTask);
     this.onAddTask.emit(newTask);
 
     this.text = '';
     this.icon = '☀️';
     this.done = false;
     this.step = 1;
+    this.Morning = false;
+    this.Afternoon = false;
+    this.Evening = false;
+    this.Night = false;
   }
 }

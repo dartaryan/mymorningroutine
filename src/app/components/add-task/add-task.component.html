@@ -46,6 +46,8 @@
           <ul>
             <li *ngFor="let subtiming of subtimings.slice(0, 2)">
               <mat-checkbox
+                [(ngModel)]="subtiming.show"
+                [ngModelOptions]="{standalone: true}"
                 matTooltip="{{ subtiming.description }}"
                 matTooltipClass="{{ subtiming.name }}"
                 [matTooltipPosition]="
@@ -61,6 +63,8 @@
           <ul>
             <li *ngFor="let subtiming of subtimings.slice(-2)">
               <mat-checkbox
+              [(ngModel)]="subtiming.show"
+              [ngModelOptions]="{standalone: true}"
                 matTooltip="{{ subtiming.description }}"
                 matTooltipClass="{{ subtiming.name }}"
                 [matTooltipPosition]="
